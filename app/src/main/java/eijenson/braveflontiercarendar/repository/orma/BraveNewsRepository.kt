@@ -14,11 +14,25 @@ class BraveNewsRepository(context: Context) {
         database = OrmaDatabase.builder(context).build()
     }
 
-    fun insert(braveNews: BraveNews) {
-        database.insertIntoBraveNews(braveNews)
+    fun insert(braveNews: BraveNews): Long {
+        return database.insertIntoBraveNews(braveNews)
     }
 
-    fun select(): List<BraveNews> {
+    fun select(id: Long): BraveNews? {
+        val model = database.selectFromBraveNews().idEq(id)
+        return model.valueOrNull()
+    }
+
+    fun selectAll(): List<BraveNews> {
         return database.selectFromBraveNews().toList()
+    }
+
+    fun deleteAll() {
+        database.deleteAll()
+    }
+
+
+    override fun toString(): String {
+        return selectAll().toString()
     }
 }
