@@ -5,6 +5,7 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
+import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -56,5 +57,7 @@ class ExampleInstrumentedTest {
 
     @Test
     fun test() {
+        val text = repository.database.selectFromBraveNews().periodIsNotNull().first().period
+        val list = RegexUtil.date(text)
     }
 }

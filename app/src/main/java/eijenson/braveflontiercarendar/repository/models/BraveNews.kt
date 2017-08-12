@@ -13,6 +13,6 @@ data class BraveNews(
         @Setter("id") @PrimaryKey(autoincrement = true) var id: Long = 0,
         @Setter("title") @Column var title: String,
         @Setter("detail") @Column var detail: String,
-        @Setter("period") @Column var period: String?,
+        @Setter("period") @Column(indexed = true) var period: String?,
         @Setter("url") @Column var url: String
 )

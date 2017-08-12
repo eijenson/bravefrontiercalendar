@@ -14,5 +14,5 @@ class BraveNewsDetailScraping(val url: String) {
                 .getElementsByClass("reportTxt")
                 .text()
     }
-    val period = RegexUtil.getReportPeriod(report)
+    val period = RegexUtil.period(report)
 }
