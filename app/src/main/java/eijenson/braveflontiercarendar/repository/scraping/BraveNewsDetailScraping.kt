@@ -15,8 +15,8 @@ class BraveNewsDetailScraping(val url: String) {
                 .text()
     }
 
-    private val date = """\d{4}年\d{1,2}月\d{1,2}日\([月火水木金土日]\) \d{1,2}:\d{1,2}:\d{1,2}"""
-    private val period = """$date[\s\S]*～.?$date"""
+    private val date = """\d{4}年\d{1,2}月\d{1,2}日\([月火水木金土日]\) (\d{1,2}:\d{1,2}:\d{1,2}|メンテナンス後)"""
+    private val period = """$date[\s]*～.?$date"""
 
     fun getReportPeriod(): String? {
         val regex = Regex(period)

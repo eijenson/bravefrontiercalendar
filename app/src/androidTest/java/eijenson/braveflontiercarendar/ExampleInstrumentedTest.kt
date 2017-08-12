@@ -52,12 +52,15 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun test2(){
+    fun test2() {
     }
 
     @Test
     fun test() {
-        println(repository.selectAll().count())
-        //repository.selectAll().map { Log.d("",it.title) }
+        val list = repository.selectAll()
+        list.map {
+            println(it.title)
+            println(it.detail)
+        }
     }
 }
