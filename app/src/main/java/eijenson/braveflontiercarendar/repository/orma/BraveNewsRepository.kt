@@ -8,11 +8,7 @@ import eijenson.braveflontiercarendar.repository.models.OrmaDatabase
  * ゲームのお知らせ情報のデータベースクラス
  */
 class BraveNewsRepository(context: Context) {
-    internal val database: OrmaDatabase
-
-    init {
-        database = OrmaDatabase.builder(context).build()
-    }
+    val database: OrmaDatabase = OrmaDatabase.builder(context).build()
 
     fun insert(models: Iterable<BraveNews>) {
         database.prepareInsertIntoBraveNews().executeAll(models)
