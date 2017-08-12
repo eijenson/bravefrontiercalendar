@@ -10,9 +10,9 @@ import kotlinx.coroutines.experimental.async
  */
 class MainPresenter(context: Context) {
 
-    val usecase = BraveNewsUseCase(context)
+    val useCase = BraveNewsUseCase(context)
 
     fun getHtmlAsync() = async(CommonPool) {
-        return@async usecase.getHtml()
+        return@async useCase.getHtml()
     }
 }
