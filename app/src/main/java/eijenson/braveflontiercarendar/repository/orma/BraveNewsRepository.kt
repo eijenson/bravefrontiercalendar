@@ -31,6 +31,17 @@ class BraveNewsRepository(context: Context) {
         return database.selectFromBraveNews().toList()
     }
 
+    fun update(braveNews: BraveNews) {
+        braveNews.apply {
+            database.updateBraveNews().idEq(id)
+                    .title(title)
+                    .detail(detail)
+                    .period(period)
+                    .url(url)
+                    .execute()
+        }
+    }
+
     fun deleteAll() {
         database.deleteAll()
     }

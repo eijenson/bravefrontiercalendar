@@ -60,10 +60,8 @@ class ExampleInstrumentedTest {
     fun test() {
         val list = repository.selectAll()
         list.map {
-            val text = RegexUtil.getReportPeriod(it.detail)
-            println(it.title)
-            println(text)
-            //repository.database.updateBraveNews().idEq(it.id).detail()
+            it.period = RegexUtil.getReportPeriod(it.detail)
+            repository.update(it)
         }
     }
 }
