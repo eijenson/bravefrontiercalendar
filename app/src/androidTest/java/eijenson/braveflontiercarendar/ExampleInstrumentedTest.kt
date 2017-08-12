@@ -3,6 +3,8 @@ package eijenson.braveflontiercarendar
 import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+import android.util.Log
+import eijenson.braveflontiercarendar.presenter.MainPresenter
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
 import org.junit.Assert
@@ -25,13 +27,13 @@ class ExampleInstrumentedTest {
     fun before() {
         context = InstrumentationRegistry.getTargetContext()
         repository = BraveNewsRepository(context)
-        repository.deleteAll()
+        //repository.deleteAll()
     }
 
     @Test
     fun 正常登録() {
-        val id = repository.insert(BraveNews(title = "title", detail = "detail", period = "period"))
-        Assert.assertNotEquals(-1,id)
+        val id = repository.insert(BraveNews(title = "title", detail = "detail", period = "period", url = "url"))
+        Assert.assertNotEquals(-1, id)
         val lastData = repository.select(id)
         Assert.assertEquals("title", lastData?.title)
         Assert.assertEquals("detail", lastData?.detail)
@@ -39,8 +41,8 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun テスト(){
-        val id = repository.insert(BraveNews(title = "title", detail = "detail", period = "period"))
+    fun テスト() {
+        val id = repository.insert(BraveNews(title = "title", detail = "detail", period = "period", url = "url"))
         val lastData = repository.select(id)
         Assert.assertEquals("title", lastData?.title)
     }
@@ -49,5 +51,15 @@ class ExampleInstrumentedTest {
     fun 検索で0件の場合はnull() {
         val nullData = repository.select(-1)
         Assert.assertEquals(null, nullData)
+    }
+
+    @Test
+    fun test2(){
+        MainPresenter().insertDatabase(context)
+    }
+
+    @Test
+    fun test() {
+        repository.selectAll().map { Log.d("",it.title) }
     }
 }

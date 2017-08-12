@@ -14,6 +14,10 @@ class BraveNewsRepository(context: Context) {
         database = OrmaDatabase.builder(context).build()
     }
 
+    fun insert(models : Iterable<BraveNews>){
+        database.prepareInsertIntoBraveNews().executeAll(models)
+    }
+
     fun insert(braveNews: BraveNews): Long {
         return database.insertIntoBraveNews(braveNews)
     }
