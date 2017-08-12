@@ -10,16 +10,8 @@ import kotlinx.coroutines.experimental.async
  */
 class MainPresenter {
 
-    lateinit var scraping: ScrapingManager
-
     fun getHtmlAsync(context: Context) = async(CommonPool) {
-        scraping = ScrapingManager()
-        insertDatabase(context)
+        val scraping = ScrapingManager(context)
         return@async scraping.getHtml()
-    }
-
-    fun insertDatabase(context: Context) {
-        scraping = ScrapingManager()
-        scraping.insertDatabase(context)
     }
 }

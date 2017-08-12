@@ -14,7 +14,7 @@ class BraveNewsRepository(context: Context) {
         database = OrmaDatabase.builder(context).build()
     }
 
-    fun insert(models : Iterable<BraveNews>){
+    fun insert(models: Iterable<BraveNews>) {
         database.prepareInsertIntoBraveNews().executeAll(models)
     }
 
@@ -35,8 +35,7 @@ class BraveNewsRepository(context: Context) {
         database.deleteAll()
     }
 
-
-    override fun toString(): String {
-        return selectAll().toString()
+    fun count(): Int {
+        return database.selectFromBraveNews().count()
     }
 }

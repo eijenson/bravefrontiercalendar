@@ -3,8 +3,6 @@ package eijenson.braveflontiercarendar
 import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import android.util.Log
-import eijenson.braveflontiercarendar.presenter.MainPresenter
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
 import org.junit.Assert
@@ -55,11 +53,11 @@ class ExampleInstrumentedTest {
 
     @Test
     fun test2(){
-        MainPresenter().insertDatabase(context)
     }
 
     @Test
     fun test() {
-        repository.selectAll().map { Log.d("",it.title) }
+        println(repository.selectAll().count())
+        //repository.selectAll().map { Log.d("",it.title) }
     }
 }
