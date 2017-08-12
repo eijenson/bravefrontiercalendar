@@ -5,7 +5,6 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
-import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -37,13 +36,7 @@ class ExampleInstrumentedTest {
         Assert.assertEquals("title", lastData?.title)
         Assert.assertEquals("detail", lastData?.detail)
         Assert.assertEquals("period", lastData?.period)
-    }
-
-    @Test
-    fun テスト() {
-        val id = repository.insert(BraveNews(title = "title", detail = "detail", period = "period", url = "url"))
-        val lastData = repository.select(id)
-        Assert.assertEquals("title", lastData?.title)
+        Assert.assertEquals("url", lastData?.url)
     }
 
     @Test
@@ -53,15 +46,15 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun test2() {
+    fun 正常更新() {
+        // APIから取得できるようになったら追加
+    }
+
+    fun データ数が正しいか(){
+        // APIから取得できるようになったら追加
     }
 
     @Test
     fun test() {
-        val list = repository.selectAll()
-        list.map {
-            it.period = RegexUtil.getReportPeriod(it.detail)
-            repository.update(it)
-        }
     }
 }
