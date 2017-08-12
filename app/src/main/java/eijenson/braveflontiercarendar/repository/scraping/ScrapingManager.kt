@@ -16,7 +16,7 @@ class ScrapingManager() {
             Log.d("ScrapingManager", "stop sleep")
             BraveNews(title = it.first,
                     detail = newsDetail.report,
-                    period = newsDetail.getReportPeriod(),
+                    period = newsDetail.period,
                     url = it.second)
         }
 

@@ -5,6 +5,7 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
+import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -59,8 +60,10 @@ class ExampleInstrumentedTest {
     fun test() {
         val list = repository.selectAll()
         list.map {
+            val text = RegexUtil.getReportPeriod(it.detail)
             println(it.title)
-            println(it.detail)
+            println(text)
+            //repository.database.updateBraveNews().idEq(it.id).detail()
         }
     }
 }
