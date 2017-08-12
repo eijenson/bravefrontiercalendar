@@ -4,7 +4,7 @@ import android.app.Application
 import eijenson.braveflontiercarendar.repository.OrmaHolder
 
 /**
- * Created by kobayashimakoto on 2017/08/11.
+ * アプリケーションクラス
  */
 class Application : Application() {
     override fun onCreate() {

@@ -4,7 +4,7 @@ import android.content.Context
 import eijenson.braveflontiercarendar.repository.models.OrmaDatabase
 
 /**
- * Created by kobayashimakoto on 2017/07/31.
+ * データベースのハンドラークラス
  */
 object OrmaHolder {
     lateinit var ORMA: OrmaDatabase

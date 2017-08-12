@@ -6,17 +6,16 @@ import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
 
 /**
- * Created by kobayashimakoto on 2017/07/31.
+ * スクレイピングを指示するクラス
  */
 class ScrapingManager(context: Context) {
 
-    lateinit var news: BraveNewsScraping
-    lateinit var braveNewsList: List<BraveNews>
+    val braveNewsList: List<BraveNews>
 
     init {
         val repository = BraveNewsRepository(context)
         if (repository.count() == 0) {
-            news = BraveNewsScraping()
+            val news = BraveNewsScraping()
             braveNewsList =
                     news.getTitleList().zip(news.getUrlList()).map {
                         val newsDetail = BraveNewsDetailScraping(it.second)

@@ -6,7 +6,7 @@ import org.jsoup.nodes.Node
 import org.jsoup.select.Elements
 
 /**
- * Created by kobayashimakoto on 2017/07/31.
+ * お知らせ位一覧画面のスクレイピングを行うクラス
  */
 class BraveNewsScraping(private val url: String = "http://www.a-lim.jp/brave/news/news_list.html") {
 

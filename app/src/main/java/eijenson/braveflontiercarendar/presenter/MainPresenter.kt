@@ -6,7 +6,7 @@ import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.async
 
 /**
- * Created by kobayashimakoto on 2017/08/12.
+ * メイン画面のUIと画面遷移以外のことをする
  */
 class MainPresenter {
 

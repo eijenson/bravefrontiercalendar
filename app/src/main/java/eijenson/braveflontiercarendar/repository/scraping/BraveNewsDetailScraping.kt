@@ -3,7 +3,7 @@ package eijenson.braveflontiercarendar.repository.scraping
 import org.jsoup.Jsoup
 
 /**
- * Created by kobayashimakoto on 2017/07/31.
+ * お知らせ詳細画面のスクレイピングを行うクラス
  */
 class BraveNewsDetailScraping(val url: String) {
 

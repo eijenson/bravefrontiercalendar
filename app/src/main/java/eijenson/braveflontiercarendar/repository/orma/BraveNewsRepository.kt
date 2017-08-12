@@ -5,7 +5,7 @@ import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.models.OrmaDatabase
 
 /**
- * Created by kobayashimakoto on 2017/07/31.
+ * ゲームのお知らせ情報のデータベースクラス
  */
 class BraveNewsRepository(context: Context) {
     internal val database: OrmaDatabase
