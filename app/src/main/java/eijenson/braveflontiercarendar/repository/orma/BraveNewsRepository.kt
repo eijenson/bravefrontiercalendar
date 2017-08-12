@@ -35,7 +35,7 @@ class BraveNewsRepository(context: Context) {
         database.deleteAll()
     }
 
-    fun count(): Int {
+    fun countAll(): Int {
         return database.selectFromBraveNews().count()
     }
 }

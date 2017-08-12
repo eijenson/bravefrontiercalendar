@@ -13,16 +13,17 @@ import kotlinx.coroutines.experimental.launch
  */
 class MainActivity : AppCompatActivity() {
 
-    val presenter = MainPresenter()
+    lateinit var presenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter = MainPresenter(this)
         setHtml()
     }
 
     fun setHtml() = launch(UI) {
-        val text = presenter.getHtmlAsync(context = this@MainActivity).await()
+        val text = presenter.getHtmlAsync().await()
         hello.text = text
     }
 }
