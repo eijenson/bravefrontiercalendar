@@ -1,6 +1,5 @@
 package eijenson.braveflontiercarendar
 
-import eijenson.braveflontiercarendar.repository.ScrapingManager
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -12,8 +11,8 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        val a = ScrapingManager()
-        println(a.getHtml())
+        //val a = ScrapingManager()
+        //println(a.getHtml())
         assertEquals(4, 2 + 2)
     }
 }

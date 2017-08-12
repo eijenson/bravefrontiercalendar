@@ -1,4 +1,4 @@
-package eijenson.braveflontiercarendar.repository
+package eijenson.braveflontiercarendar.repository.scraping
 
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.async

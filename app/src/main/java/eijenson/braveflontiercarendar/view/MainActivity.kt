@@ -3,7 +3,7 @@ package eijenson.braveflontiercarendar.view
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import eijenson.braveflontiercarendar.R
-import eijenson.braveflontiercarendar.repository.ScrapingManager
+import eijenson.braveflontiercarendar.repository.scraping.ScrapingManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch

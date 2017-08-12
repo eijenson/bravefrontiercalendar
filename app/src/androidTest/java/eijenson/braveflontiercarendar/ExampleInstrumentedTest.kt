@@ -2,11 +2,12 @@ package eijenson.braveflontiercarendar
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-
+import android.util.Log
+import eijenson.braveflontiercarendar.repository.models.BraveNews
+import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -19,6 +20,8 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
+        BraveNewsRepository(appContext).insert(BraveNews(title = "aaaa", detail = "bbbb", period = ""))
+        Log.d("orma_table",BraveNewsRepository(appContext).select().toString())
         assertEquals("eijenson.braveflontiercarendar", appContext.packageName)
     }
 }

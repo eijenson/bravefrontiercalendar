@@ -1,4 +1,4 @@
-package eijenson.braveflontiercarendar.repository
+package eijenson.braveflontiercarendar.repository.scraping
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
