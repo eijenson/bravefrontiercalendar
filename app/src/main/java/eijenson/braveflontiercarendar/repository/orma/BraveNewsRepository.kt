@@ -24,7 +24,7 @@ class BraveNewsRepository(context: Context) {
     }
 
     fun selectAll(): List<BraveNews> {
-        return database.selectFromBraveNews().toList()
+        return database.selectFromBraveNews().orderBy("startTime is null asc").orderByStartTimeAsc().toList()
     }
 
     fun update(braveNews: BraveNews) {
@@ -34,6 +34,8 @@ class BraveNewsRepository(context: Context) {
                     .detail(detail)
                     .period(period)
                     .url(url)
+                    .startTime(startTime)
+                    .endTime(endTime)
                     .execute()
         }
     }

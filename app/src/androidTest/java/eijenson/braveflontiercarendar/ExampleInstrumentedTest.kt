@@ -3,6 +3,7 @@ package eijenson.braveflontiercarendar
 import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+import android.util.Log
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
 import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
@@ -51,13 +52,34 @@ class ExampleInstrumentedTest {
         // APIから取得できるようになったら追加
     }
 
-    fun データ数が正しいか(){
+    fun データ数が正しいか() {
         // APIから取得できるようになったら追加
     }
 
     @Test
-    fun test() {
-        val text = repository.database.selectFromBraveNews().periodIsNotNull().first().period
-        val list = RegexUtil.date(text)
+    fun devUpdate() {
+        /*val textList = repository.database.selectFromBraveNews().periodIsNotNull().toList()
+        textList.map {
+            val list = RegexUtil.dateTime(it.period!!)
+            it.startTime = list?.first()
+            it.endTime = list?.last()
+            repository.update(it)
+        }*/
+        repository.selectAll().map {
+            Log.d("test", it.startTimeJapan+"")
+        }
     }
+
+    @Test
+    fun test() {
+        val textList = repository.database.selectFromBraveNews().periodIsNotNull().toList()
+        textList.map {
+            val list = RegexUtil.dateTime(it.period!!)
+            println(it.title + " " + list)
+        }
+    }
+
+    val BraveNews.startTimeJapan: String?
+        get() = RegexUtil.formatDateTime(startTime)
+
 }
