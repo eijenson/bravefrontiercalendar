@@ -5,7 +5,7 @@ import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
 import eijenson.braveflontiercarendar.repository.scraping.ScrapingManager
 
 /**
- * Created by kobayashimakoto on 2017/08/12.
+ * お知らせ情報系のロジックを実装するクラス
  */
 class BraveNewsUseCase(context: Context) {
     val repository = BraveNewsRepository(context)
