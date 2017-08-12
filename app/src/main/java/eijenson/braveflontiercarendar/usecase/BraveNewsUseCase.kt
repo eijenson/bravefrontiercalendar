@@ -11,7 +11,7 @@ class BraveNewsUseCase(context: Context) {
     val repository = BraveNewsRepository(context)
 
     fun getHtml(): String {
-        if (repository.countAll() == 0) {
+        if (repository.isEmpty()) {
             repository.insert(ScrapingManager().startScraping())
         }
         val braveNewsList = repository.selectAll()

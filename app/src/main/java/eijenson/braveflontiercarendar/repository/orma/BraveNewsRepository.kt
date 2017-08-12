@@ -45,4 +45,8 @@ class BraveNewsRepository(context: Context) {
     fun countAll(): Int {
         return database.selectFromBraveNews().count()
     }
+
+    fun isEmpty(): Boolean {
+        return database.selectFromBraveNews().isEmpty
+    }
 }
