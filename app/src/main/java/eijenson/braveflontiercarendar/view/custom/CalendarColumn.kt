@@ -13,8 +13,14 @@ import kotlinx.android.synthetic.main.calendar_column.view.*
 class CalendarColumn @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
-        defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
+        defStyleAttr: Int = 0,
+        defStyleRes: Int = 0) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
+
     init {
+        init(context, attrs)
+    }
+
+    fun init(context: Context, attrs: AttributeSet?) {
         View.inflate(context, R.layout.calendar_column, this)
         val a = context.obtainStyledAttributes(attrs, R.styleable.CalendarColumn)
         val text: String? = a.getString(R.styleable.CalendarColumn_text)
@@ -23,5 +29,4 @@ class CalendarColumn @JvmOverloads constructor(
         text_view.setTextColor(textColor)
         a.recycle()
     }
-
 }
