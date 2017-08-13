@@ -36,8 +36,8 @@ object RegexUtil {
     /**
      * 日時を取得する
      */
-    fun dateTime(inqut: String): List<Date?>? {
-        val inputList = eventDate(inqut)
+    fun dateTime(input: String): List<Date?>? {
+        val inputList = eventDate(input)
         val regexDateTime = Regex(dateTime)
         val regexDate = Regex(date)
         return inputList?.map {

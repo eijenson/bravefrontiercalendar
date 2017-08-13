@@ -2,6 +2,7 @@ package eijenson.braveflontiercarendar.usecase
 
 import android.content.Context
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
+import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import eijenson.braveflontiercarendar.repository.scraping.ScrapingManager
 
 /**
@@ -15,7 +16,7 @@ class BraveNewsUseCase(context: Context) {
             repository.insert(ScrapingManager().startScraping())
         }
         val braveNewsList = repository.selectAll()
-        val result = braveNewsList.map { "${it.title}\n${it.period}" }
+        val result = braveNewsList.map { "${it.title}\n${RegexUtil.formatDateTime(it.startTime)}\n${RegexUtil.formatDateTime(it.endTime)}" }
         return result.joinToString(separator = "\n\n")
     }
 }
