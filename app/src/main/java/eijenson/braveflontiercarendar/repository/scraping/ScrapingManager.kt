@@ -14,10 +14,13 @@ class ScrapingManager() {
             Log.d("ScrapingManager", "start sleep")
             Thread.sleep(1000)
             Log.d("ScrapingManager", "stop sleep")
+            val timeList = RegexUtil.dateTime(newsDetail.period)
             BraveNews(title = it.first,
                     detail = newsDetail.report,
                     period = newsDetail.period,
-                    url = it.second)
+                    url = it.second,
+                    startTime = timeList?.first(),
+                    endTime = timeList?.last())
         }
 
     }

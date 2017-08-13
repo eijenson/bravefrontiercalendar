@@ -27,7 +27,8 @@ object RegexUtil {
     /**
      * イベント日時を取得する
      */
-    fun eventDate(input: String): List<String>? {
+    fun eventDate(input: String?): List<String>? {
+        if(input == null) return null
         val regex = Regex(eventDate)
         val match = regex.findAll(input)
         return match.toList().map { it.value }
@@ -36,7 +37,7 @@ object RegexUtil {
     /**
      * 日時を取得する
      */
-    fun dateTime(input: String): List<Date?>? {
+    fun dateTime(input: String?): List<Date?>? {
         val inputList = eventDate(input)
         val regexDateTime = Regex(dateTime)
         val regexDate = Regex(date)

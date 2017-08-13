@@ -58,13 +58,13 @@ class ExampleInstrumentedTest {
 
     @Test
     fun devUpdate() {
-        /*val textList = repository.database.selectFromBraveNews().periodIsNotNull().toList()
+        val textList = repository.database.selectFromBraveNews().periodIsNotNull().toList()
         textList.map {
-            val list = RegexUtil.dateTime(it.period!!)
+            val list = RegexUtil.dateTime(it.period)
             it.startTime = list?.first()
             it.endTime = list?.last()
             repository.update(it)
-        }*/
+        }
         repository.selectAll().map {
             Log.d("test", it.startTimeJapan+"")
         }

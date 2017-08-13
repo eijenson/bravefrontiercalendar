@@ -9,7 +9,10 @@ import eijenson.braveflontiercarendar.R
 /**
  * Created by kobayashimakoto on 2017/08/13.
  */
-class MyCalendarView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : ConstraintLayout(context, attrs, defStyleAttr) {
+class MyCalendarView @JvmOverloads constructor(
+        context: Context,
+        attrs: AttributeSet? = null,
+        defStyleAttr: Int = 0) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     init {
         init(context)
