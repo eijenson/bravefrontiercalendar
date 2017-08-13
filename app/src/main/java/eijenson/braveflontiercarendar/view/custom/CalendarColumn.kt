@@ -17,8 +17,10 @@ class CalendarColumn @JvmOverloads constructor(
     init {
         View.inflate(context, R.layout.calendar_column, this)
         val a = context.obtainStyledAttributes(attrs, R.styleable.CalendarColumn)
-        val columnText: String? = a.getString(R.styleable.CalendarColumn_text)
-        text_view.text = columnText
+        val text: String? = a.getString(R.styleable.CalendarColumn_text)
+        val textColor = a.getColor(R.styleable.CalendarColumn_textColor, context.resources.getColor(R.color.black))
+        text_view.text = text
+        text_view.setTextColor(textColor)
         a.recycle()
     }
 
