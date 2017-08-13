@@ -2,8 +2,8 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
@@ -12,7 +12,6 @@
         android:gravity="center"
         android:text="日"
         android:textColor="@color/red"
-        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
@@ -21,7 +20,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="月"
-        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintStart_toEndOf="@+id/textView"/>
 
     <TextView
@@ -30,7 +28,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="火"
-        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintStart_toEndOf="@+id/textView2"/>
 
     <TextView
@@ -39,7 +36,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="水"
-        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintStart_toEndOf="@+id/textView3"/>
 
     <TextView
@@ -48,7 +44,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="木"
-        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintStart_toEndOf="@+id/textView4"/>
 
     <TextView
@@ -57,7 +52,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="金"
-        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintStart_toEndOf="@+id/textView5"/>
 
     <TextView
@@ -67,7 +61,6 @@
         android:gravity="center"
         android:text="土"
         android:textColor="@color/blue"
-        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintStart_toEndOf="@+id/textView6"/>
 
     <TextView
