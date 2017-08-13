@@ -12,7 +12,10 @@
         android:gravity="center"
         android:text="日"
         android:textColor="@color/red"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -20,7 +23,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="月"
-        app:layout_constraintStart_toEndOf="@+id/textView"/>
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -28,7 +33,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="火"
-        app:layout_constraintStart_toEndOf="@+id/textView2"/>
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -36,7 +43,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="水"
-        app:layout_constraintStart_toEndOf="@+id/textView3"/>
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -44,7 +53,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="木"
-        app:layout_constraintStart_toEndOf="@+id/textView4"/>
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -52,7 +63,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="金"
-        app:layout_constraintStart_toEndOf="@+id/textView5"/>
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -61,7 +74,9 @@
         android:gravity="center"
         android:text="土"
         android:textColor="@color/blue"
-        app:layout_constraintStart_toEndOf="@+id/textView6"/>
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/textView8"
