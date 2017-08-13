@@ -31,22 +31,25 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    // [公式サポートライブラリ] (https://developer.android.com/topic/libraries/support-library/revisions.html)
     implementation 'com.android.support:appcompat-v7:25.4.0'
-    implementation 'org.jsoup:jsoup:1.7.3'
+    // [ConstraintLayout] (SDK Manager)
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    // [html perser](https://jsoup.org/download)
+    implementation 'org.jsoup:jsoup:1.10.3'
+    // [コルーチン](https://github.com/Kotlin/kotlinx.coroutines)
     def coroutines_version = '0.17'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    // Orma
+    // [Orma] (https://github.com/gfx/Android-Orma)
     implementation 'com.github.gfx.android.orma:orma:4.2.5'
     kapt 'com.github.gfx.android.orma:orma-processor:4.2.5'
+    // [junit] (https://github.com/junit-team/junit4)
     testImplementation 'junit:junit:4.12'
+    // [Android Test](https://developer.android.com/topic/libraries/testing-support-library/release-notes.html)
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.0'
     androidTestImplementation 'com.android.support.test:rules:1.0.0'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
 }
 kotlin {
     experimental {
