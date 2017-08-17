@@ -7,7 +7,7 @@ import android.view.View
 import eijenson.braveflontiercarendar.R
 
 /**
- * Created by kobayashimakoto on 2017/08/13.
+ * カレンダーView
  */
 class MyCalendarView @JvmOverloads constructor(
         context: Context,
