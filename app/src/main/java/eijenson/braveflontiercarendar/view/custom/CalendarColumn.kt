@@ -16,6 +16,12 @@ class CalendarColumn @JvmOverloads constructor(
         defStyleAttr: Int = 0,
         defStyleRes: Int = 0) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
 
+    var text: String
+        get() = text_view.text.toString()
+        set(value) {
+            text_view.text = value
+        }
+
     init {
         init(context, attrs)
     }
