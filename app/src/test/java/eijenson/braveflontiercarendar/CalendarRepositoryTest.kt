@@ -1,6 +1,6 @@
 package eijenson.braveflontiercarendar
 
-import eijenson.braveflontiercarendar.repository.local.CarendarRepository
+import eijenson.braveflontiercarendar.repository.local.CalendarRepository
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -9,7 +9,7 @@ import java.util.*
 /**
  * Created by eijenson on 2017/08/18.
  */
-class CarendarRepositoryTest {
+class CalendarRepositoryTest {
 
     lateinit var c: Calendar
 
@@ -20,7 +20,7 @@ class CarendarRepositoryTest {
 
     @Test
     fun getFirstOneWeekTest() {
-        val list = CarendarRepository().getFirstOneWeek()
+        val list = CalendarRepository().getFirstOneWeek()
         list.map {
             println(it)
         }
@@ -31,7 +31,7 @@ class CarendarRepositoryTest {
     @Test
     fun getCalendarTest() {
 
-        val list = CarendarRepository().getCalendar()
+        val list = CalendarRepository().getCalendar()
         list.map {
             println(it)
         }

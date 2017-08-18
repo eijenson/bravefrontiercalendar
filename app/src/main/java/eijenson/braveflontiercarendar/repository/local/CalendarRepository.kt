@@ -6,7 +6,7 @@ import kotlin.collections.ArrayList
 /**
  * Created by eijenson on 2017/08/18.
  */
-class CarendarRepository {
+class CalendarRepository {
 
     private val WEEK_NUM = 7
     private val c = Calendar.getInstance()
@@ -48,7 +48,7 @@ class CarendarRepository {
         c2.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
         val list = ArrayList<Date>()
         do {
-            val dateList = CarendarRepository().getFirstOneWeek(c2)
+            val dateList = CalendarRepository().getFirstOneWeek(c2)
             list.addAll(dateList)
             c2.add(Calendar.DATE, WEEK_NUM)
         } while (c2.get(Calendar.MONTH) == month)
