@@ -5,6 +5,7 @@ import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.View;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -40,7 +41,10 @@ public class MyCalendarView extends ConstraintLayout {
             first++;
             int resId = getResources().getIdentifier(tvId, "id", context.getPackageName());
             CalendarColumn col = (CalendarColumn) findViewById(resId);
-            col.setText(date.toString());
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            col.setText(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+            col.setVisibility(View.VISIBLE);
         }
     }
 }
