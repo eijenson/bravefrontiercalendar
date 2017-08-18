@@ -25,9 +25,8 @@ class CarendarRepository {
         return list
     }
 
-    fun getCalendar(): List<Date> {
-        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1)
-        val weekOfYear = c.get(Calendar.WEEK_OF_YEAR)
+    fun getFirstOneWeek(c3: Calendar): List<Date> {
+        val weekOfYear = c3.get(Calendar.WEEK_OF_YEAR)
         val c2 = Calendar.getInstance()
         c2.set(Calendar.WEEK_OF_YEAR, weekOfYear)
         c2.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
@@ -36,6 +35,23 @@ class CarendarRepository {
             list.add(c2.time)
             c2.add(Calendar.DATE, 1)
         }
+        return list
+    }
+
+
+    fun getCalendar(): List<Date> {
+        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1)
+        val month = c.get(Calendar.MONTH)
+        val weekOfYear = c.get(Calendar.WEEK_OF_YEAR)
+        val c2 = Calendar.getInstance()
+        c2.set(Calendar.WEEK_OF_YEAR, weekOfYear)
+        c2.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
+        val list = ArrayList<Date>()
+        do {
+            val dateList = CarendarRepository().getFirstOneWeek(c2)
+            list.addAll(dateList)
+            c2.add(Calendar.DATE, WEEK_NUM)
+        } while (c2.get(Calendar.MONTH) == month)
         return list
     }
 

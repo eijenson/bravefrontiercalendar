@@ -28,6 +28,17 @@ class CarendarRepositoryTest {
         Assert.assertEquals(c.time.month, Date().month)
     }
 
+    @Test
+    fun getCalendarTest() {
+
+        val list = CarendarRepository().getCalendar()
+        list.map {
+            println(it)
+        }
+
+        Assert.assertEquals(c.time.month, Date().month)
+    }
+
     fun p(c: Calendar) {
         print("Date:")
         print(c.get(Calendar.YEAR))

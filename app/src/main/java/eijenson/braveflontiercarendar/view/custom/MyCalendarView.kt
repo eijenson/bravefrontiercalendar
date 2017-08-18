@@ -16,7 +16,7 @@ class MyCalendarView @JvmOverloads constructor(
         defStyleAttr: Int = 0) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     val first = 8
-    val num = 6
+    val num = 7 * 5 - 1
 
     init {
         init(context)
@@ -24,7 +24,7 @@ class MyCalendarView @JvmOverloads constructor(
 
     fun init(context: Context) {
         View.inflate(context, R.layout.my_calendar_view, this)
-        var list = CarendarRepository().getFirstOneWeek()
+        var list = CarendarRepository().getCalendar()
         for (i in first..first + num) {
             val tvId = "textView" + i
             val resId = resources.getIdentifier(tvId, "id", context.packageName)
