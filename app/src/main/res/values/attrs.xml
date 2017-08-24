@@ -4,4 +4,7 @@
         <attr name="text" format="string"/>
         <attr name="textColor" format="color"/>
     </declare-styleable>
+    <declare-styleable name="MyCalendarView">
+        <attr name="date" format="string"/>
+    </declare-styleable>
 </resources>

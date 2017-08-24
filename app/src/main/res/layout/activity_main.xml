@@ -10,6 +10,7 @@
     <eijenson.braveflontiercarendar.view.custom.MyCalendarView
         android:id="@+id/calendar"
         android:layout_width="match_parent"
+        app:date="2016/8/16"
         android:layout_height="200dp"/>
 
     <ScrollView

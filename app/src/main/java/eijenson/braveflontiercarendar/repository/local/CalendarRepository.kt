@@ -11,23 +11,15 @@ class CalendarRepository {
     private val WEEK_NUM = 7
     private val c = Calendar.getInstance()
 
-    fun getFirstOneWeek(): List<Date> {
-        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1)
-        val weekOfYear = c.get(Calendar.WEEK_OF_YEAR)
-        val c2 = Calendar.getInstance()
-        c2.set(Calendar.WEEK_OF_YEAR, weekOfYear)
-        c2.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
-        val list = ArrayList<Date>()
-        for (i in 1..WEEK_NUM) {
-            list.add(c2.time)
-            c2.add(Calendar.DATE, 1)
-        }
-        return list
+    constructor() {}
+
+    constructor(date: Date) {
+        c.time = date
     }
 
     fun getFirstOneWeek(c3: Calendar): List<Date> {
         val weekOfYear = c3.get(Calendar.WEEK_OF_YEAR)
-        val c2 = Calendar.getInstance()
+        val c2 = c3.clone() as Calendar
         c2.set(Calendar.WEEK_OF_YEAR, weekOfYear)
         c2.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
         val list = ArrayList<Date>()
@@ -40,15 +32,15 @@ class CalendarRepository {
 
 
     fun getCalendar(): List<Date> {
-        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1)
+        c.set(Calendar.DATE, 1)
         val month = c.get(Calendar.MONTH)
         val weekOfYear = c.get(Calendar.WEEK_OF_YEAR)
-        val c2 = Calendar.getInstance()
+        val c2 = c.clone() as Calendar
         c2.set(Calendar.WEEK_OF_YEAR, weekOfYear)
         c2.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
         val list = ArrayList<Date>()
         do {
-            val dateList = CalendarRepository().getFirstOneWeek(c2)
+            val dateList = getFirstOneWeek(c2)
             list.addAll(dateList)
             c2.add(Calendar.DATE, WEEK_NUM)
         } while (c2.get(Calendar.MONTH) == month)
