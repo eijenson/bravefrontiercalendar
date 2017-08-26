@@ -1,6 +1,5 @@
 package eijenson.braveflontiercarendar.module
 
-import android.content.Context
 import dagger.Module
 import dagger.Provides
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepositoryImpl
@@ -14,7 +13,7 @@ import javax.inject.Singleton
 class InfraModule {
     @Provides
     @Singleton
-    fun provideBraveNewsRepository(context: Context): BraveNewsRepository {
-        return BraveNewsRepositoryImpl(context)
+    fun provideBraveNewsRepository(): BraveNewsRepository {
+        return BraveNewsRepositoryImpl()
     }
 }
