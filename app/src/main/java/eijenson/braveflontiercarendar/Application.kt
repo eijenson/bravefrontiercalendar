@@ -8,9 +8,6 @@ import eijenson.braveflontiercarendar.repository.OrmaHolder
  * アプリケーションクラス
  */
 class Application : Application() {
-
-    val context = this
-
     override fun onCreate() {
         super.onCreate()
 
