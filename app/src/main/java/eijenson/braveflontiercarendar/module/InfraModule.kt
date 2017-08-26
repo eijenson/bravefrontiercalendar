@@ -7,7 +7,7 @@ import eijenson.braveflontiercarendar.repository.repository.BraveNewsRepository
 import javax.inject.Singleton
 
 /**
- * Created by eijenson on 2017/08/24.
+ * お知らせ情報系のDBを依存性を管理するクラス
  */
 @Module
 class InfraModule {
