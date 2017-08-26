@@ -1,6 +1,6 @@
 package eijenson.braveflontiercarendar.repository.orma
 
-import eijenson.braveflontiercarendar.Application
+import eijenson.braveflontiercarendar.repository.OrmaHolder
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.models.OrmaDatabase
 import eijenson.braveflontiercarendar.repository.repository.BraveNewsRepository
@@ -10,7 +10,7 @@ import javax.inject.Inject
  * ゲームのお知らせ情報のデータベースクラス
  */
 class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
-    val database: OrmaDatabase = OrmaDatabase.builder(Application.context).build()
+    val database: OrmaDatabase = OrmaHolder.ORMA
 
     override fun insert(models: Iterable<BraveNews>) {
         database.prepareInsertIntoBraveNews().executeAll(models)
