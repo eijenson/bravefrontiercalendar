@@ -1,14 +1,14 @@
 package eijenson.braveflontiercarendar.repository.orma
 
-import android.content.Context
+import eijenson.braveflontiercarendar.Application
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.models.OrmaDatabase
 
 /**
  * ゲームのお知らせ情報のデータベースクラス
  */
-class BraveNewsRepository(context: Context) {
-    val database: OrmaDatabase = OrmaDatabase.builder(context).build()
+class BraveNewsRepository() {
+    val database: OrmaDatabase = OrmaDatabase.builder(Application.context).build()
 
     fun insert(models: Iterable<BraveNews>) {
         database.prepareInsertIntoBraveNews().executeAll(models)

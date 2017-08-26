@@ -1,6 +1,5 @@
 package eijenson.braveflontiercarendar.usecase
 
-import android.content.Context
 import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
 import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import eijenson.braveflontiercarendar.repository.scraping.ScrapingManager
@@ -8,8 +7,8 @@ import eijenson.braveflontiercarendar.repository.scraping.ScrapingManager
 /**
  * お知らせ情報系のロジックを実装するクラス
  */
-class BraveNewsUseCase(context: Context) {
-    val repository = BraveNewsRepository(context)
+class BraveNewsUseCase() {
+    val repository = BraveNewsRepository()
 
     fun getHtml(): String {
         if (repository.isEmpty()) {
