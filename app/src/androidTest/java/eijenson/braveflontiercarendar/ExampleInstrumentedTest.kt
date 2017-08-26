@@ -26,7 +26,7 @@ class ExampleInstrumentedTest {
     @Before
     fun before() {
         context = InstrumentationRegistry.getTargetContext()
-        repository = BraveNewsRepositoryImpl(context, null)
+        repository = BraveNewsRepositoryImpl()
         //repository.deleteAll()
     }
 
