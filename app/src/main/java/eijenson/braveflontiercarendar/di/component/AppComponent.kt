@@ -1,4 +1,4 @@
-package eijenson.braveflontiercarendar.component
+package eijenson.braveflontiercarendar.di.component
 
 /**
  * Created by eijenson on 2017/08/27.

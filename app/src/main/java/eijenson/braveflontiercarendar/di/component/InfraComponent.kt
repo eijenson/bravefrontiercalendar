@@ -1,4 +1,4 @@
-package eijenson.braveflontiercarendar.component
+package eijenson.braveflontiercarendar.di.component
 
 import dagger.Component
 import eijenson.braveflontiercarendar.module.InfraModule

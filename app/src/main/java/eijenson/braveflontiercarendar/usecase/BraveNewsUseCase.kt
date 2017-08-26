@@ -1,6 +1,6 @@
 package eijenson.braveflontiercarendar.usecase
 
-import eijenson.braveflontiercarendar.component.DaggerInfraComponent
+import eijenson.braveflontiercarendar.di.component.DaggerInfraComponent
 import eijenson.braveflontiercarendar.repository.repository.BraveNewsRepository
 import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import eijenson.braveflontiercarendar.repository.scraping.ScrapingManager
