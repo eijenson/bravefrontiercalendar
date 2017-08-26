@@ -3,7 +3,6 @@ package eijenson.braveflontiercarendar.usecase
 import eijenson.braveflontiercarendar.di.component.DaggerInfraComponent
 import eijenson.braveflontiercarendar.repository.repository.BraveNewsRepository
 import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
-import eijenson.braveflontiercarendar.repository.scraping.ScrapingManager
 import javax.inject.Inject
 
 /**
@@ -18,7 +17,7 @@ class BraveNewsUseCase() {
 
     fun getHtml(): String {
         if (repository.isEmpty()) {
-            repository.insert(ScrapingManager().startScraping())
+            repository.insert(ScrapingUseCase().startScraping())
         }
         val braveNewsList = repository.selectAll()
         val result = braveNewsList.map { "${it.title}\n${RegexUtil.formatDateTime(it.startTime)}\n${RegexUtil.formatDateTime(it.endTime)}" }

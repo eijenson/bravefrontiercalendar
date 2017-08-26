@@ -1,12 +1,15 @@
-package eijenson.braveflontiercarendar.repository.scraping
+package eijenson.braveflontiercarendar.usecase
 
 import android.util.Log
 import eijenson.braveflontiercarendar.repository.models.BraveNews
+import eijenson.braveflontiercarendar.repository.scraping.BraveNewsDetailScraping
+import eijenson.braveflontiercarendar.repository.scraping.BraveNewsScraping
+import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 
 /**
  * スクレイピングを指示するクラス
  */
-class ScrapingManager() {
+class ScrapingUseCase() {
     fun startScraping(): List<BraveNews> {
         val news = BraveNewsScraping()
         return news.getTitleList().zip(news.getUrlList()).map {
