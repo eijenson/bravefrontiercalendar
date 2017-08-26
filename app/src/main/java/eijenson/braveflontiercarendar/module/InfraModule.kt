@@ -13,7 +13,5 @@ import javax.inject.Singleton
 class InfraModule {
     @Provides
     @Singleton
-    fun provideBraveNewsRepository(): BraveNewsRepository {
-        return BraveNewsRepositoryImpl()
-    }
+    fun provideBraveNewsRepository(): BraveNewsRepository = BraveNewsRepositoryImpl()
 }

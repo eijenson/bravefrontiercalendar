@@ -10,7 +10,11 @@ import javax.inject.Inject
  * ゲームのお知らせ情報のデータベースクラス
  */
 class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
-    val database: OrmaDatabase = OrmaHolder.ORMA
+    val database: OrmaDatabase
+
+    init {
+        database = OrmaHolder.ORMA
+    }
 
     override fun insert(models: Iterable<BraveNews>) {
         database.prepareInsertIntoBraveNews().executeAll(models)
