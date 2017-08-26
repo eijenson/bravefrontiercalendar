@@ -1,33 +1,35 @@
 package eijenson.braveflontiercarendar.repository.orma
 
-import eijenson.braveflontiercarendar.Application
+import eijenson.braveflontiercarendar.repository.OrmaHolder
 import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.models.OrmaDatabase
+import eijenson.braveflontiercarendar.repository.repository.BraveNewsRepository
+import javax.inject.Inject
 
 /**
  * ゲームのお知らせ情報のデータベースクラス
  */
-class BraveNewsRepository() {
-    val database: OrmaDatabase = OrmaDatabase.builder(Application.context).build()
+class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
+    val database: OrmaDatabase = OrmaHolder.ORMA
 
-    fun insert(models: Iterable<BraveNews>) {
+    override fun insert(models: Iterable<BraveNews>) {
         database.prepareInsertIntoBraveNews().executeAll(models)
     }
 
-    fun insert(braveNews: BraveNews): Long {
+    override fun insert(braveNews: BraveNews): Long {
         return database.insertIntoBraveNews(braveNews)
     }
 
-    fun select(id: Long): BraveNews? {
+    override fun select(id: Long): BraveNews? {
         val model = database.selectFromBraveNews().idEq(id)
         return model.valueOrNull()
     }
 
-    fun selectAll(): List<BraveNews> {
+    override fun selectAll(): List<BraveNews> {
         return database.selectFromBraveNews().orderBy("startTime is null asc").orderByStartTimeAsc().toList()
     }
 
-    fun update(braveNews: BraveNews) {
+    override fun update(braveNews: BraveNews) {
         braveNews.apply {
             database.updateBraveNews().idEq(id)
                     .title(title)
@@ -40,15 +42,15 @@ class BraveNewsRepository() {
         }
     }
 
-    fun deleteAll() {
+    override fun deleteAll() {
         database.deleteAll()
     }
 
-    fun countAll(): Int {
+    override fun countAll(): Int {
         return database.selectFromBraveNews().count()
     }
 
-    fun isEmpty(): Boolean {
+    override fun isEmpty(): Boolean {
         return database.selectFromBraveNews().isEmpty
     }
 }

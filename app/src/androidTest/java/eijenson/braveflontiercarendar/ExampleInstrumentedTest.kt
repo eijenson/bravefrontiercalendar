@@ -5,7 +5,7 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import android.util.Log
 import eijenson.braveflontiercarendar.repository.models.BraveNews
-import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepository
+import eijenson.braveflontiercarendar.repository.orma.BraveNewsRepositoryImpl
 import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import org.junit.Assert
 import org.junit.Before
@@ -21,12 +21,12 @@ import org.junit.runner.RunWith
 class ExampleInstrumentedTest {
 
     lateinit var context: Context
-    lateinit var repository: BraveNewsRepository
+    lateinit var repository: BraveNewsRepositoryImpl
 
     @Before
     fun before() {
         context = InstrumentationRegistry.getTargetContext()
-        repository = BraveNewsRepository(context)
+        repository = BraveNewsRepositoryImpl()
         //repository.deleteAll()
     }
 
