@@ -7,6 +7,40 @@
     android:layout_height="match_parent"
     tools:parentTag="android.support.constraint.ConstraintLayout">
 
+    <TextView
+        android:id="@+id/month"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:text="2017年8月"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:text="<"
+        app:layout_constraintBottom_toBottomOf="@+id/month"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        android:layout_marginEnd="8dp"/>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:text=">"
+        app:layout_constraintBottom_toBottomOf="@+id/month"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"/>
+
     <eijenson.braveflontiercarendar.view.custom.CalendarColumn
         android:id="@+id/sunday"
         android:layout_width="0dp"
@@ -15,7 +49,7 @@
         app:layout_constraintEnd_toStartOf="@+id/monday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/month"
         app:text="日"
         app:textColor="@color/red"/>
 
@@ -27,6 +61,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tuesday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sunday"
+        app:layout_constraintTop_toTopOf="@+id/sunday"
         app:text="月"/>
 
     <eijenson.braveflontiercarendar.view.custom.CalendarColumn
@@ -37,6 +72,7 @@
         app:layout_constraintEnd_toStartOf="@+id/wednesday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/monday"
+        app:layout_constraintTop_toTopOf="@+id/monday"
         app:text="火"/>
 
     <eijenson.braveflontiercarendar.view.custom.CalendarColumn
@@ -47,6 +83,7 @@
         app:layout_constraintEnd_toStartOf="@+id/thursday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tuesday"
+        app:layout_constraintTop_toTopOf="@+id/tuesday"
         app:text="水"/>
 
     <eijenson.braveflontiercarendar.view.custom.CalendarColumn
@@ -57,6 +94,7 @@
         app:layout_constraintEnd_toStartOf="@+id/friday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/wednesday"
+        app:layout_constraintTop_toTopOf="@+id/wednesday"
         app:text="木"/>
 
     <eijenson.braveflontiercarendar.view.custom.CalendarColumn
@@ -67,6 +105,7 @@
         app:layout_constraintEnd_toStartOf="@+id/saturday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/thursday"
+        app:layout_constraintTop_toTopOf="@+id/thursday"
         app:text="金"/>
 
     <eijenson.braveflontiercarendar.view.custom.CalendarColumn
@@ -77,6 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/friday"
+        app:layout_constraintTop_toTopOf="@+id/friday"
         app:text="土"
         app:textColor="@color/blue"/>
 
