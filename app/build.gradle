@@ -55,9 +55,9 @@ dependencies {
     // [単体テスト] (https://github.com/junit-team/junit4)
     testImplementation 'junit:junit:4.12'
     // [Unit Test](https://developer.android.com/topic/libraries/testing-support-library/release-notes.html)
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.0'
-    androidTestImplementation 'com.android.support.test:runner:1.0.0'
-    androidTestImplementation 'com.android.support.test:rules:1.0.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
 }
 kotlin {
     experimental {

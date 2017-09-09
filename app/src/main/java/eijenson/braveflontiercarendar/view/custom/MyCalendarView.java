@@ -47,6 +47,8 @@ public class MyCalendarView extends ConstraintLayout {
         if (isInEditMode()) return;
         selectedCalendar = getSelectedDate(date_text);
         setCalendar(context);
+        onClickPrev();
+        onClickNext();
         a.recycle();
     }
 
@@ -65,8 +67,6 @@ public class MyCalendarView extends ConstraintLayout {
             col.setText(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
             col.setVisibility(View.VISIBLE);
         }
-        onClickPrev();
-        onClickNext();
     }
 
     private void allGone(Context context) {
