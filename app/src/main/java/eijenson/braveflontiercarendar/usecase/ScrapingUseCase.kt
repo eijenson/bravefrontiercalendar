@@ -25,6 +25,5 @@ class ScrapingUseCase() {
                     startTime = timeList?.first(),
                     endTime = timeList?.last())
         }
-
     }
 }
