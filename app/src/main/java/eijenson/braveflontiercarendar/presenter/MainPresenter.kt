@@ -18,12 +18,15 @@ class MainPresenter(val mainActivity: MainActivity) {
 
     fun setHtml() = launch(UI) {
         try {
+            mainActivity.showProgressBar()
             val text = getHtmlAsync().await()
             mainActivity.setText(text)
         } catch (e: CancellationException) {
             mainActivity.showToast("canceled")
         } catch (e: Exception) {
             mainActivity.showToast("exception")
+        } finally {
+            mainActivity.hideProgressBar()
         }
     }
 

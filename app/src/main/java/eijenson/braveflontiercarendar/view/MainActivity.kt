@@ -2,8 +2,11 @@ package eijenson.braveflontiercarendar.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
+import eijenson.braveflontiercarendar.DevUtils
 import eijenson.braveflontiercarendar.R
+import eijenson.braveflontiercarendar.message.RxBus
 import eijenson.braveflontiercarendar.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,6 +22,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         presenter = MainPresenter(this)
         presenter.setHtml()
+        clear.setOnClickListener {
+            DevUtils.clear()
+        }
+        dev.setOnClickListener {
+            DevUtils.dev()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        RxBus.listen<Int>().subscribe {
+            println(it)
+            changeProgressPercent(it)
+            progress_bar_persent.text = progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max
+        }
+        RxBus.listen<String>().subscribe {
+            println(it)
+            setProgressMax(it.toInt())
+            progress_bar_persent.text = progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max
+        }
     }
 
     fun setText(text: String) {
@@ -27,5 +50,21 @@ class MainActivity : AppCompatActivity() {
 
     fun showToast(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+    }
+
+    fun showProgressBar() {
+        progress_bar_loading.visibility = View.VISIBLE
+    }
+
+    fun changeProgressPercent(percent: Int) {
+        progress_bar_loading.progress = percent
+    }
+
+    fun setProgressMax(max: Int) {
+        progress_bar_loading.max = max
+    }
+
+    fun hideProgressBar() {
+        //progress_bar_loading.visibility = View.INVISIBLE
     }
 }
