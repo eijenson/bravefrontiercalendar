@@ -16,11 +16,18 @@ class BraveNewsUseCase() {
     }
 
     fun getHtml(): String {
-        if (repository.isEmpty()) {
+        if (shouldScraping()) {
             repository.insert(ScrapingUseCase().startScraping())
         }
         val braveNewsList = repository.selectAll()
         val result = braveNewsList.map { "${it.title}\n${RegexUtil.formatDateTime(it.startTime)}\n${RegexUtil.formatDateTime(it.endTime)}" }
         return result.joinToString(separator = "\n\n")
+    }
+
+    /**
+     * スクレイピングをする必要があるのかを返す
+     */
+    private fun shouldScraping():Boolean{
+        return repository.isEmpty()
     }
 }
