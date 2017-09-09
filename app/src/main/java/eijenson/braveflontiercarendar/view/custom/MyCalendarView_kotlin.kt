@@ -28,7 +28,7 @@ class MyCalendarView_kotlin @JvmOverloads constructor(
         for (i in first..first + num) {
             val tvId = "textView" + i
             val resId = resources.getIdentifier(tvId, "id", context.packageName)
-            val columnKotlin: CalendarColumn_kotlin? = findViewById(resId) as CalendarColumn_kotlin?
+            val columnKotlin: CalendarColumn_kotlin? = findViewById<CalendarColumn_kotlin>(resId)
             columnKotlin?.text = list.first().date.toString()
             list = list.drop(1)
         }

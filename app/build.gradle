@@ -7,12 +7,12 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "eijenson.braveflontiercarendar"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,7 +34,7 @@ android {
 
 dependencies {
     // [公式サポートライブラリ] (https://developer.android.com/topic/libraries/support-library/revisions.html)
-    implementation 'com.android.support:appcompat-v7:25.4.0'
+    implementation 'com.android.support:appcompat-v7:26.0.2'
     // [ネストが少ないレイアウト] (SDK Manager)
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     // [htmlのperser](https://jsoup.org/download)
