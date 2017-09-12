@@ -19,12 +19,5 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.Main2Activity">
-        </activity>
-        <activity android:name=".view.Main3Activity">
-        </activity>
-        <activity android:name=".view.DevelopActivity">
-        </activity>
     </application>
-
 </manifest>
