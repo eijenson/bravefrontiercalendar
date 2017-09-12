@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
-import eijenson.braveflontiercarendar.DevUtils
 import eijenson.braveflontiercarendar.R
 import eijenson.braveflontiercarendar.message.RxBus
 import eijenson.braveflontiercarendar.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.launch
 
 /**
  * メインアクティビティ
@@ -22,11 +23,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         presenter = MainPresenter(this)
         presenter.setHtml()
-        clear.setOnClickListener {
-            DevUtils.clear()
-        }
-        dev.setOnClickListener {
-            DevUtils.dev()
+        bottom_navigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.calendar -> {
+                    println("aaa")
+                }
+                R.id.list -> {
+                    println("bbb")
+                }
+                R.id.dev -> {
+                    val intent = DevelopActivity.createIntent(this)
+                    startActivity(intent)
+                }
+                else -> {
+                    println("xxx")
+                }
+            }
+            true
         }
     }
 
@@ -35,13 +48,18 @@ class MainActivity : AppCompatActivity() {
         RxBus.listen<Int>().subscribe {
             println(it)
             changeProgressPercent(it)
-            progress_bar_persent.text = progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max
+            setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
         }
         RxBus.listen<String>().subscribe {
             println(it)
             setProgressMax(it.toInt())
-            progress_bar_persent.text = progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max
+            setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
         }
+    }
+
+    fun setPersentText(text: String) = launch(UI) {
+        progress_bar_persent.text = text
+
     }
 
     fun setText(text: String) {

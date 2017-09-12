@@ -20,7 +20,7 @@ class ScrapingUseCase() {
             Thread.sleep(1000)
             Log.d("ScrapingManager", "stop sleep")
             val timeList = RegexUtil.dateTime(newsDetail.period)
-            RxBus.send(index)
+            RxBus.send(index + 1)
             BraveNews(title = it.first,
                     detail = newsDetail.report,
                     period = newsDetail.period,

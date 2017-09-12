@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="eijenson.braveflontiercarendar">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".Application"
@@ -18,6 +18,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".view.Main2Activity">
+        </activity>
+        <activity android:name=".view.Main3Activity">
+        </activity>
+        <activity android:name=".view.DevelopActivity">
         </activity>
     </application>
 
