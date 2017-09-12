@@ -1,8 +1,8 @@
 package eijenson.braveflontiercarendar
 
-import eijenson.braveflontiercarendar.di.extensions.getDate
-import eijenson.braveflontiercarendar.di.extensions.getMonth
-import eijenson.braveflontiercarendar.di.extensions.getYear
+import eijenson.braveflontiercarendar.extensions.getDate
+import eijenson.braveflontiercarendar.extensions.getMonth
+import eijenson.braveflontiercarendar.extensions.getYear
 import eijenson.braveflontiercarendar.repository.local.CalendarRepository
 import org.junit.Assert
 import org.junit.Before

@@ -22,8 +22,10 @@ class EventListPresenter(val eventListFragment: EventListFragment) {
             val text = getHtmlAsync().await()
             eventListFragment.setText(text)
         } catch (e: CancellationException) {
+            Log.d("EventListPresenter", "setHtml", e)
             eventListFragment.showToast("canceled")
         } catch (e: Exception) {
+            Log.d("EventListPresenter", "setHtml", e)
             eventListFragment.showToast("exception")
         } finally {
             eventListFragment.hideProgressBar()
@@ -31,7 +33,7 @@ class EventListPresenter(val eventListFragment: EventListFragment) {
     }
 
 
-    fun getHtmlAsync() = async(CommonPool) {
+    fun getHtmlAsync()= async(CommonPool) {
         try {
             return@async usecase.getHtml()
         } catch (e: Exception) {

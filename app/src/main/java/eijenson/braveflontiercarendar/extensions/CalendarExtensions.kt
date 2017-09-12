@@ -1,4 +1,4 @@
-package eijenson.braveflontiercarendar.di.extensions
+package eijenson.braveflontiercarendar.extensions
 
 import java.util.*
 
