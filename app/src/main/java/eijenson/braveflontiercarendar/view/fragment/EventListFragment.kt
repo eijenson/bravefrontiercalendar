@@ -1,6 +1,7 @@
 package eijenson.braveflontiercarendar.view.fragment
 
 import android.app.Fragment
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -59,11 +60,16 @@ class EventListFragment : Fragment() {
     }
 
     fun showToast(text: String) {
-        Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun showProgressBar() {
         progress_bar_loading.visibility = View.VISIBLE
+        progress_bar_persent.visibility = View.VISIBLE
     }
 
     fun changeProgressPercent(percent: Int) {
