@@ -7,6 +7,7 @@ import android.widget.Toast
 import eijenson.braveflontiercarendar.R
 import eijenson.braveflontiercarendar.message.RxBus
 import eijenson.braveflontiercarendar.presenter.MainPresenter
+import eijenson.braveflontiercarendar.view.fragment.DevelopFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
@@ -32,8 +33,10 @@ class MainActivity : AppCompatActivity() {
                     println("bbb")
                 }
                 R.id.dev -> {
-                    val intent = DevelopActivity.createIntent(this)
-                    startActivity(intent)
+                    val fragment = DevelopFragment.newInstance()
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.main_content, fragment)
+                            .commit()
                 }
                 else -> {
                     println("xxx")
