@@ -18,7 +18,7 @@ object DevUtils {
                 val bnRepository = BraveNewsRepositoryImpl()
                 bnRepository.deleteAll()
             } catch (e: Exception) {
-                Log.d("MainPresenter", "getHtmlAsync", e)
+                Log.d("EventListPresenter", "getHtmlAsync", e)
                 throw e
             }
         }.await()

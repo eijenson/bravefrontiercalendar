@@ -2,7 +2,7 @@ package eijenson.braveflontiercarendar.presenter
 
 import android.util.Log
 import eijenson.braveflontiercarendar.usecase.BraveNewsUseCase
-import eijenson.braveflontiercarendar.view.MainActivity
+import eijenson.braveflontiercarendar.view.fragment.EventListFragment
 import kotlinx.coroutines.experimental.CancellationException
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
@@ -12,21 +12,21 @@ import kotlinx.coroutines.experimental.launch
 /**
  * メイン画面のUIと画面遷移以外のことをする
  */
-class MainPresenter(val mainActivity: MainActivity) {
+class EventListPresenter(val eventListFragment: EventListFragment) {
 
     val usecase = BraveNewsUseCase()
 
     fun setHtml() = launch(UI) {
         try {
-            mainActivity.showProgressBar()
+            eventListFragment.showProgressBar()
             val text = getHtmlAsync().await()
-            mainActivity.setText(text)
+            eventListFragment.setText(text)
         } catch (e: CancellationException) {
-            mainActivity.showToast("canceled")
+            eventListFragment.showToast("canceled")
         } catch (e: Exception) {
-            mainActivity.showToast("exception")
+            eventListFragment.showToast("exception")
         } finally {
-            mainActivity.hideProgressBar()
+            eventListFragment.hideProgressBar()
         }
     }
 
@@ -35,7 +35,7 @@ class MainPresenter(val mainActivity: MainActivity) {
         try {
             return@async usecase.getHtml()
         } catch (e: Exception) {
-            Log.d("MainPresenter", "getHtmlAsync", e)
+            Log.d("EventListPresenter", "getHtmlAsync", e)
             throw e
         }
     }
