@@ -1,12 +1,13 @@
 package eijenson.braveflontiercarendar.view.fragment
 
-import android.app.Fragment
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.trello.rxlifecycle2.components.RxFragment
+import com.trello.rxlifecycle2.kotlin.bindToLifecycle
 import eijenson.braveflontiercarendar.R
 import eijenson.braveflontiercarendar.message.RxBus
 import eijenson.braveflontiercarendar.presenter.EventListPresenter
@@ -17,7 +18,7 @@ import kotlinx.coroutines.experimental.launch
 /**
  * Created by eijenson on 2017/09/12.
  */
-class EventListFragment : Fragment() {
+class EventListFragment : RxFragment() {
 
     companion object {
         fun newInstance(): EventListFragment {
@@ -34,18 +35,17 @@ class EventListFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter = EventListPresenter(this)
+        //TODO:リストの下が見えない
         presenter.setHtml()
     }
 
     override fun onResume() {
         super.onResume()
-        RxBus.listen<Int>().subscribe {
-            println(it)
+        RxBus.listen<Int>().bindToLifecycle(this).subscribe {
             changeProgressPercent(it)
             setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
         }
-        RxBus.listen<String>().subscribe {
-            println(it)
+        RxBus.listen<String>().bindToLifecycle(this).subscribe {
             setProgressMax(it.toInt())
             setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
         }
@@ -73,10 +73,12 @@ class EventListFragment : Fragment() {
     }
 
     fun changeProgressPercent(percent: Int) {
+        println(percent)
         progress_bar_loading.progress = percent
     }
 
     fun setProgressMax(max: Int) {
+        println(max)
         progress_bar_loading.max = max
     }
 
