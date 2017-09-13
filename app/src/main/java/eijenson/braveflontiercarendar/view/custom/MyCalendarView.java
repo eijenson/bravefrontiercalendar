@@ -2,6 +2,9 @@ package eijenson.braveflontiercarendar.view.custom;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.View;
@@ -39,13 +42,36 @@ public class MyCalendarView extends ConstraintLayout {
     }
 
     private Calendar selectedCalendar;
+    private String dateText;
+
+    @Nullable
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Parcelable parcelable = super.onSaveInstanceState();
+        Bundle b = new Bundle();
+        b.putParcelable("parent", parcelable);
+        b.putString("date", getMonth());
+        return b;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        Bundle b = (Bundle) state;
+        super.onRestoreInstanceState(b.getParcelable("parent"));
+        dateText = b.getString("date");
+        selectedCalendar = getSelectedDate(dateText);
+        setCalendar(this.getContext());
+
+    }
 
     private void init(Context context, AttributeSet attrs) {
         View.inflate(context, R.layout.my_calendar_view, this);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyCalendarView);
-        String date_text = a.getString(R.styleable.MyCalendarView_date);
+        if (dateText == null) {
+            dateText = a.getString(R.styleable.MyCalendarView_date);
+        }
         if (isInEditMode()) return;
-        selectedCalendar = getSelectedDate(date_text);
+        selectedCalendar = getSelectedDate(dateText);
         setCalendar(context);
         onClickPrev();
         onClickNext();
@@ -61,7 +87,7 @@ public class MyCalendarView extends ConstraintLayout {
             String tvId = "textView" + first;
             first++;
             int resId = getResources().getIdentifier(tvId, "id", context.getPackageName());
-            CalendarColumn col = (CalendarColumn) findViewById(resId);
+            CalendarColumn col = findViewById(resId);
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             col.setText(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
@@ -83,12 +109,12 @@ public class MyCalendarView extends ConstraintLayout {
 
     private void setTextMonth(Date date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月", Locale.JAPAN);
-        TextView tv = (TextView) findViewById(R.id.month);
+        TextView tv = findViewById(R.id.month);
         tv.setText(format.format(date));
     }
 
     private void onClickPrev() {
-        Button prev = (Button) findViewById(R.id.prev);
+        Button prev = findViewById(R.id.prev);
         prev.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +125,7 @@ public class MyCalendarView extends ConstraintLayout {
     }
 
     private void onClickNext() {
-        Button next = (Button) findViewById(R.id.next);
+        Button next = findViewById(R.id.next);
         next.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +135,9 @@ public class MyCalendarView extends ConstraintLayout {
         });
     }
 
+    private String getMonth() {
+        return selectedCalendar.get(Calendar.YEAR) + "/" + (selectedCalendar.get(Calendar.MONTH) + 1)+"/"+selectedCalendar.get(Calendar.DATE);
+    }
 
     private Calendar getSelectedDate(String date_text) {
         if (date_text == null) return Calendar.getInstance();
