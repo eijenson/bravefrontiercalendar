@@ -11,6 +11,8 @@ import com.trello.rxlifecycle2.kotlin.bindToLifecycle
 import eijenson.braveflontiercarendar.R
 import eijenson.braveflontiercarendar.message.RxBus
 import eijenson.braveflontiercarendar.presenter.EventListPresenter
+import eijenson.braveflontiercarendar.repository.models.BraveNews
+import eijenson.braveflontiercarendar.view.adapter.EventListAdapter
 import kotlinx.android.synthetic.main.fragment_event_list.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
@@ -60,8 +62,14 @@ class EventListFragment : RxFragment() {
         progress_bar_persent.text = text
     }
 
-    fun setText(text: String) {
-        hello.text = text
+    fun setText(data: List<BraveNews>) {
+        val adapter: EventListAdapter
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            adapter = EventListAdapter(context, R.layout.item_event, data)
+        } else {
+            adapter = EventListAdapter(activity, R.layout.item_event, data)
+        }
+        list_event.adapter = adapter
     }
 
     fun showToast(text: String) {

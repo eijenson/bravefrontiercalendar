@@ -19,8 +19,8 @@ class EventListPresenter(var eventListFragment: EventListFragment?) {
     fun setHtml() = launch(UI) {
         try {
             eventListFragment?.showProgressBar()
-            val text = getHtmlAsync().await()
-            eventListFragment?.setText(text)
+            val result = getHtmlAsync().await()
+            eventListFragment?.setText(result)
         } catch (e: CancellationException) {
             Log.d("EventListPresenter", "setHtml", e)
             eventListFragment?.showToast("canceled")

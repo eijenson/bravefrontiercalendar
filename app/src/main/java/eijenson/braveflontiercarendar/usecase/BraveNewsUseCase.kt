@@ -1,8 +1,8 @@
 package eijenson.braveflontiercarendar.usecase
 
 import eijenson.braveflontiercarendar.di.component.DaggerInfraComponent
+import eijenson.braveflontiercarendar.repository.models.BraveNews
 import eijenson.braveflontiercarendar.repository.repository.BraveNewsRepository
-import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 import javax.inject.Inject
 
 /**
@@ -15,13 +15,11 @@ class BraveNewsUseCase() {
         DaggerInfraComponent.builder().build().inject(this)
     }
 
-    fun getHtml(): String {
+    fun getHtml(): List<BraveNews> {
         if (shouldScraping()) {
             repository.insert(ScrapingUseCase().startScraping())
         }
-        val braveNewsList = repository.selectAll()
-        val result = braveNewsList.map { "${it.title}\n${RegexUtil.formatDateTime(it.startTime)}\n${RegexUtil.formatDateTime(it.endTime)}" }
-        return result.joinToString(separator = "\n\n")
+        return repository.selectAll()
     }
 
     /**
