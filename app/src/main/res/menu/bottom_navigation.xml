@@ -11,7 +11,7 @@
         android:title="list"
         android:id="@+id/list"/>
     <item
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@android:drawable/ic_menu_view"
         android:title="develop"
         android:id="@+id/dev"/>
 </menu>
