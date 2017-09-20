@@ -51,6 +51,11 @@ class EventListFragment : RxFragment() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
+    }
+
     fun setPersentText(text: String) = launch(UI) {
         progress_bar_persent.text = text
     }

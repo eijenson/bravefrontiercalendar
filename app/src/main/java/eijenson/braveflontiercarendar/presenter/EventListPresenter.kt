@@ -12,24 +12,28 @@ import kotlinx.coroutines.experimental.launch
 /**
  * メイン画面のUIと画面遷移以外のことをする
  */
-class EventListPresenter(val eventListFragment: EventListFragment) {
+class EventListPresenter(var eventListFragment: EventListFragment?) {
 
     val usecase = BraveNewsUseCase()
 
     fun setHtml() = launch(UI) {
         try {
-            eventListFragment.showProgressBar()
+            eventListFragment?.showProgressBar()
             val text = getHtmlAsync().await()
-            eventListFragment.setText(text)
+            eventListFragment?.setText(text)
         } catch (e: CancellationException) {
             Log.d("EventListPresenter", "setHtml", e)
-            eventListFragment.showToast("canceled")
+            eventListFragment?.showToast("canceled")
         } catch (e: Exception) {
             Log.d("EventListPresenter", "setHtml", e)
-            eventListFragment.showToast("exception")
+            eventListFragment?.showToast("exception")
         } finally {
-            eventListFragment.hideProgressBar()
+            eventListFragment?.hideProgressBar()
         }
+    }
+
+    fun onDestroy(){
+        eventListFragment = null
     }
 
 
