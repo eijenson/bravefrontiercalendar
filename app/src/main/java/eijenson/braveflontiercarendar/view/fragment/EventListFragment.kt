@@ -2,6 +2,7 @@ package eijenson.braveflontiercarendar.view.fragment
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,10 +40,12 @@ class EventListFragment : RxFragment() {
         presenter = EventListPresenter(this)
         //TODO:リストの下が見えない
         presenter.setHtml()
+        Log.d("EventListFragment","onViewCreated")
     }
 
     override fun onResume() {
         super.onResume()
+        //TODO:データクラスにして一本化
         RxBus.listen<Int>().bindToLifecycle(this).subscribe {
             changeProgressPercent(it)
             setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
@@ -51,11 +54,16 @@ class EventListFragment : RxFragment() {
             setProgressMax(it.toInt())
             setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
         }
+        RxBus.listen<List<BraveNews>>().bindToLifecycle(this).subscribe {
+            setText(it)
+        }
+
     }
 
     override fun onDestroy() {
         super.onDestroy()
         presenter.onDestroy()
+        Log.d("EventListFragment","onDestroy")
     }
 
     fun setPersentText(text: String) = launch(UI) {

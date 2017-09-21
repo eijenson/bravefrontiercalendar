@@ -1,6 +1,7 @@
 package eijenson.braveflontiercarendar.presenter
 
 import android.util.Log
+import eijenson.braveflontiercarendar.message.RxBus
 import eijenson.braveflontiercarendar.usecase.BraveNewsUseCase
 import eijenson.braveflontiercarendar.view.fragment.EventListFragment
 import kotlinx.coroutines.experimental.CancellationException
@@ -20,7 +21,7 @@ class EventListPresenter(var eventListFragment: EventListFragment?) {
         try {
             eventListFragment?.showProgressBar()
             val result = getHtmlAsync().await()
-            eventListFragment?.setText(result)
+            RxBus.send(result)
         } catch (e: CancellationException) {
             Log.d("EventListPresenter", "setHtml", e)
             eventListFragment?.showToast("canceled")
