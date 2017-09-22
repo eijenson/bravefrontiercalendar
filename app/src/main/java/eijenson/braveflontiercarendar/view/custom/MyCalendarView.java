@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Locale;
 
 import eijenson.braveflontiercarendar.R;
+import eijenson.braveflontiercarendar.extensions.DevExtensionsKt;
 import eijenson.braveflontiercarendar.repository.local.CalendarRepository;
 
 /**
@@ -65,6 +66,7 @@ public class MyCalendarView extends ConstraintLayout {
     }
 
     private void init(Context context, AttributeSet attrs) {
+        DevExtensionsKt.reset();
         View.inflate(context, R.layout.my_calendar_view, this);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyCalendarView);
         if (dateText == null) {
@@ -76,6 +78,7 @@ public class MyCalendarView extends ConstraintLayout {
         onClickPrev();
         onClickNext();
         a.recycle();
+        DevExtensionsKt.rap();
     }
 
     private void setCalendar(Context context) {
