@@ -47,7 +47,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/monday"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/month"
         app:text="日"
@@ -59,7 +58,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/tuesday"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sunday"
         app:layout_constraintTop_toTopOf="@+id/sunday"
         app:text="月"/>
@@ -70,7 +68,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/wednesday"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/monday"
         app:layout_constraintTop_toTopOf="@+id/monday"
         app:text="火"/>
@@ -81,7 +78,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/thursday"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tuesday"
         app:layout_constraintTop_toTopOf="@+id/tuesday"
         app:text="水"/>
@@ -92,7 +88,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/friday"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/wednesday"
         app:layout_constraintTop_toTopOf="@+id/wednesday"
         app:text="木"/>
@@ -103,7 +98,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/saturday"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/thursday"
         app:layout_constraintTop_toTopOf="@+id/thursday"
         app:text="金"/>
@@ -114,7 +108,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/friday"
         app:layout_constraintTop_toTopOf="@+id/friday"
         app:text="土"
@@ -127,7 +120,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="1"/>
@@ -139,7 +131,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toStartOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView1"
         app:layout_constraintTop_toBottomOf="@+id/monday"
         app:text="2"/>
@@ -151,7 +142,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/tuesday"
         app:text="3"/>
@@ -163,7 +153,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/wednesday"
         app:text="4"/>
@@ -175,7 +164,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/thursday"
         app:text="5"/>
@@ -187,7 +175,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
         app:layout_constraintEnd_toStartOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/friday"
         app:text="6"/>
@@ -199,7 +186,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/saturday"
         app:text="7"/>
@@ -211,7 +197,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toStartOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="8"/>
@@ -223,7 +208,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView16"
         app:layout_constraintEnd_toStartOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:text="9"/>
@@ -235,7 +219,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintEnd_toStartOf="@+id/textView11"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:text="10"/>
@@ -247,7 +230,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toStartOf="@+id/textView12"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:text="11"/>
@@ -259,7 +241,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toStartOf="@+id/textView13"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:text="12"/>
@@ -271,7 +252,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toStartOf="@+id/textView14"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:text="13"/>
@@ -283,7 +263,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:text="14"/>
@@ -295,7 +274,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView22"
         app:layout_constraintEnd_toStartOf="@+id/textView16"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="15"/>
@@ -307,7 +285,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
         app:layout_constraintEnd_toStartOf="@+id/textView17"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:text="16"/>
@@ -319,7 +296,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView24"
         app:layout_constraintEnd_toStartOf="@+id/textView18"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:text="17"/>
@@ -331,7 +307,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView25"
         app:layout_constraintEnd_toStartOf="@+id/textView19"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
         app:text="18"/>
@@ -343,7 +318,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView26"
         app:layout_constraintEnd_toStartOf="@+id/textView20"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         app:text="19"/>
@@ -355,7 +329,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView27"
         app:layout_constraintEnd_toStartOf="@+id/textView21"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
         app:text="20"/>
@@ -367,7 +340,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView28"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
         app:text="21"/>
@@ -379,7 +351,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView29"
         app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="22"/>
@@ -391,7 +362,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView30"
         app:layout_constraintEnd_toStartOf="@+id/textView24"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
         app:text="23"/>
@@ -403,7 +373,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView31"
         app:layout_constraintEnd_toStartOf="@+id/textView25"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView23"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
         app:text="24"/>
@@ -415,7 +384,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView32"
         app:layout_constraintEnd_toStartOf="@+id/textView26"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView24"
         app:layout_constraintTop_toBottomOf="@+id/textView18"
         app:text="25"/>
@@ -427,7 +395,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView33"
         app:layout_constraintEnd_toStartOf="@+id/textView27"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView19"
         app:text="26"/>
@@ -439,7 +406,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView34"
         app:layout_constraintEnd_toStartOf="@+id/textView28"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView26"
         app:layout_constraintTop_toBottomOf="@+id/textView20"
         app:text="27"/>
@@ -451,7 +417,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView35"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView27"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
         app:text="28"/>
@@ -464,7 +429,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView36"
         app:layout_constraintEnd_toStartOf="@+id/textView30"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="29"/>
@@ -477,7 +441,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView37"
         app:layout_constraintEnd_toStartOf="@+id/textView31"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView29"
         app:layout_constraintTop_toBottomOf="@+id/textView23"
         app:text="30"/>
@@ -490,7 +453,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView38"
         app:layout_constraintEnd_toStartOf="@+id/textView32"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView30"
         app:layout_constraintTop_toBottomOf="@+id/textView24"
         app:text="31"/>
@@ -503,7 +465,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView39"
         app:layout_constraintEnd_toStartOf="@+id/textView33"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView31"
         app:layout_constraintTop_toBottomOf="@+id/textView25"
         app:text="32"/>
@@ -516,7 +477,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView40"
         app:layout_constraintEnd_toStartOf="@+id/textView34"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView32"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
         app:text="33"/>
@@ -529,7 +489,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView41"
         app:layout_constraintEnd_toStartOf="@+id/textView35"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView33"
         app:layout_constraintTop_toBottomOf="@+id/textView27"
         app:text="34"/>
@@ -542,7 +501,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView42"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView34"
         app:layout_constraintTop_toBottomOf="@+id/textView28"
         app:text="35"/>
@@ -555,7 +513,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView37"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:text="36"/>
@@ -568,7 +525,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView38"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView36"
         app:layout_constraintTop_toBottomOf="@+id/textView30"
         app:text="37"/>
@@ -581,7 +537,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView39"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView37"
         app:layout_constraintTop_toBottomOf="@+id/textView31"
         app:text="38"/>
@@ -594,7 +549,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView40"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintTop_toBottomOf="@+id/textView32"
         app:text="39"/>
@@ -607,7 +561,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView41"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView39"
         app:layout_constraintTop_toBottomOf="@+id/textView33"
         app:text="40"/>
@@ -620,7 +573,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView42"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView40"
         app:layout_constraintTop_toBottomOf="@+id/textView34"
         app:text="41"/>
@@ -633,7 +585,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView41"
         app:layout_constraintTop_toBottomOf="@+id/textView35"
         app:text="42"/>
