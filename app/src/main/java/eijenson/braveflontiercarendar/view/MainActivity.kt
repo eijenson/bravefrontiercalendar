@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
+            if (bottom_navigation.selectedItemId == item.itemId) {
+                return@setOnNavigationItemSelectedListener true
+            }
             when (item.itemId) {
                 R.id.calendar -> {
                     moveToFragment(CalendarFragment.newInstance())
