@@ -24,9 +24,13 @@ import eijenson.braveflontiercarendar.repository.local.CalendarRepository;
 
 /**
  * Created by eijenson on 2017/08/19.
+ * カレンダー用View
  */
 
 public class MyCalendarView extends ConstraintLayout {
+
+    private Calendar selectedCalendar;
+    private String dateText;
 
     public MyCalendarView(Context context) {
         this(context, null);
@@ -35,14 +39,10 @@ public class MyCalendarView extends ConstraintLayout {
     public MyCalendarView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
-
     public MyCalendarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
-
-    private Calendar selectedCalendar;
-    private String dateText;
 
     @Nullable
     @Override
@@ -79,7 +79,7 @@ public class MyCalendarView extends ConstraintLayout {
     }
 
     private void setCalendar(Context context) {
-        int first = 8;
+        int first = 1;
         setTextMonth(selectedCalendar.getTime());
         List<Date> list = new CalendarRepository(selectedCalendar.getTime()).getCalendar();
         allGone(context);
@@ -96,13 +96,13 @@ public class MyCalendarView extends ConstraintLayout {
     }
 
     private void allGone(Context context) {
-        int first = 8;
-        int last = 49;
+        int first = 1;
+        int last = 42;
         for (int i = first; i <= last; i++) {
             String tvId = "textView" + first;
             first++;
             int resId = getResources().getIdentifier(tvId, "id", context.getPackageName());
-            CalendarColumn col = (CalendarColumn) findViewById(resId);
+            CalendarColumn col = findViewById(resId);
             col.setVisibility(View.INVISIBLE);
         }
     }
