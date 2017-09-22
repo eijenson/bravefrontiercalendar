@@ -9,6 +9,7 @@ import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
+import java.io.IOException
 
 /**
  * メイン画面のUIと画面遷移以外のことをする
@@ -23,26 +24,31 @@ class EventListPresenter(var eventListFragment: EventListFragment?) {
             val result = getHtmlAsync().await()
             RxBus.send(result)
         } catch (e: CancellationException) {
-            Log.d("EventListPresenter", "setHtml", e)
+            Log.e("EventListPresenter", "setHtml")
+            e.printStackTrace()
             eventListFragment?.showToast("canceled")
+        } catch (e: IOException) {
+            e.printStackTrace()
+            eventListFragment?.showToast("通信に失敗しました")
         } catch (e: Exception) {
-            Log.d("EventListPresenter", "setHtml", e)
+            Log.e("EventListPresenter", "setHtml")
+            e.printStackTrace()
             eventListFragment?.showToast("exception")
         } finally {
             eventListFragment?.hideProgressBar()
         }
     }
 
-    fun onDestroy(){
+    fun onDestroy() {
         eventListFragment = null
     }
 
 
-    fun getHtmlAsync()= async(CommonPool) {
+    fun getHtmlAsync() = async(CommonPool) {
         try {
             return@async usecase.getHtml()
         } catch (e: Exception) {
-            Log.d("EventListPresenter", "getHtmlAsync", e)
+            e.printStackTrace()
             throw e
         }
     }
