@@ -17,10 +17,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initFragment()
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
-            if (bottom_navigation.selectedItemId == item.itemId) {
-                return@setOnNavigationItemSelectedListener true
-            }
+            //if (bottom_navigation.selectedItemId == item.itemId) {
+            //    return@setOnNavigationItemSelectedListener true
+            //}
             when (item.itemId) {
                 R.id.calendar -> {
                     moveToFragment(CalendarFragment.newInstance())
@@ -39,13 +40,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun initFragment() {
+        val fragment = CalendarFragment.newInstance()
+        fragmentManager.beginTransaction()
+                .add(R.id.main_content, fragment)
+                .commit()
+    }
+
     fun moveToFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
                 .replace(R.id.main_content, fragment)
                 .commit()
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
 }
