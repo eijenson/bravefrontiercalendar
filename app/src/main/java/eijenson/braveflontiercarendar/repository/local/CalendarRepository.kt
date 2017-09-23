@@ -22,30 +22,23 @@ class CalendarRepository {
         c.truncationTime()
     }
 
-    fun getWeek(c3: Calendar): List<Date> {
-        val c2 = c3.clone() as Calendar
+    fun getCalendar(): List<Date> {
+        c.set(Calendar.DATE, 1)
+        c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
+        val month = c.get(Calendar.MONTH)
         val list = ArrayList<Date>()
-        for (i in 1..WEEK_NUM) {
-            list.add(c2.time)
-            c2.add(Calendar.DATE, 1)
-        }
+        do {
+            list.addAll(getWeek())
+        } while (c.get(Calendar.MONTH) == month)
         return list
     }
 
-
-    fun getCalendar(): List<Date> {
-        c.set(Calendar.DATE, 1)
-        val month = c.get(Calendar.MONTH)
-        val weekOfYear = c.get(Calendar.WEEK_OF_YEAR)
-        val c2 = c.clone() as Calendar
-        c2.set(Calendar.WEEK_OF_YEAR, weekOfYear)
-        c2.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
+    private fun getWeek(): List<Date> {
         val list = ArrayList<Date>()
-        do {
-            val dateList = getWeek(c2)
-            list.addAll(dateList)
-            c2.add(Calendar.DATE, WEEK_NUM)
-        } while (c2.get(Calendar.MONTH) == month)
+        for (i in 1..WEEK_NUM) {
+            list.add(c.time)
+            c.add(Calendar.DATE, 1)
+        }
         return list
     }
 
