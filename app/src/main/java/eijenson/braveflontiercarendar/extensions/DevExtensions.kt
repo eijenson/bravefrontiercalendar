@@ -6,9 +6,14 @@ package eijenson.braveflontiercarendar.extensions
 var time: Long = 0
 
 fun rap() {
-    if (time != 0L) println("時間" + (System.currentTimeMillis() - time))
+    rap("")
+}
+
+fun rap(message: String) {
+    if (time != 0L) println(message + ":時間" + (System.currentTimeMillis() - time))
     time = System.currentTimeMillis()
 }
+
 
 fun reset() {
     time = System.currentTimeMillis()

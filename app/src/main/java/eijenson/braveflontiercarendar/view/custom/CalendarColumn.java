@@ -33,7 +33,7 @@ public class CalendarColumn extends LinearLayout {
     }
 
     public void setText(String value) {
-        TextView textView = (TextView) findViewById(R.id.text_view);
+        TextView textView = findViewById(R.id.text_view);
         textView.setText(value);
     }
 
@@ -42,7 +42,7 @@ public class CalendarColumn extends LinearLayout {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CalendarColumn);
         String text = a.getString(R.styleable.CalendarColumn_text);
         int textColor = a.getColor(R.styleable.CalendarColumn_textColor, context.getResources().getColor(R.color.black));
-        TextView textView = (TextView) findViewById(R.id.text_view);
+        TextView textView = findViewById(R.id.text_view);
         textView.setText(text);
         textView.setTextColor(textColor);
         a.recycle();
