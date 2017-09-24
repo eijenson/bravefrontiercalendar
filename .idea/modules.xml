@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/braveFlontierCarendar.iml" filepath="$PROJECT_DIR$/braveFlontierCarendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/braveflontiercalendar.iml" filepath="$PROJECT_DIR$/braveflontiercalendar.iml" />
     </modules>
   </component>
 </project>

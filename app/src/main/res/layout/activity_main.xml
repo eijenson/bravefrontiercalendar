@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="eijenson.braveflontiercarendar.view.MainActivity">
+    tools:context="eijenson.bravefrontiercalendar.view.MainActivity">
 
     <fragment
         android:id="@+id/main_content"
-        android:name="eijenson.braveflontiercarendar.view.fragment.MainFragment"
+        android:name="eijenson.bravefrontiercalendar.view.fragment.MainFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"

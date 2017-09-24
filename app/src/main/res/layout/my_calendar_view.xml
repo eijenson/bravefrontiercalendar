@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/sunday"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
         app:text="日"
         app:textColor="@color/red"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/monday"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="@+id/sunday"
         app:text="月"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/tuesday"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="@+id/sunday"
         app:text="火"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/wednesday"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toTopOf="@+id/sunday"
         app:text="水"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/thursday"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
         app:layout_constraintTop_toTopOf="@+id/sunday"
         app:text="木"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/friday"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
         app:layout_constraintTop_toTopOf="@+id/sunday"
         app:text="金"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/saturday"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
         app:text="土"
         app:textColor="@color/blue"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView1"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -124,7 +124,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="1"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="2"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -146,7 +146,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="3"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -157,7 +157,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="4"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView5"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -168,7 +168,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="5"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView6"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -179,7 +179,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="6"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView7"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -190,7 +190,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sunday"
         app:text="7"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView8"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -201,7 +201,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="8"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView9"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -212,7 +212,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="9"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView10"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -223,7 +223,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="10"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView11"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -234,7 +234,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="11"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView12"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -245,7 +245,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="12"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView13"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -256,7 +256,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="13"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView14"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -267,7 +267,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:text="14"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView15"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -278,7 +278,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="15"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView16"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -289,7 +289,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="16"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView17"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -300,7 +300,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="17"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView18"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -311,7 +311,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="18"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView19"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -322,7 +322,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="19"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView20"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -333,7 +333,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="20"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView21"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -344,7 +344,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:text="21"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView22"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -355,7 +355,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="22"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView23"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -366,7 +366,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="23"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView24"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -377,7 +377,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="24"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView25"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -388,7 +388,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="25"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView26"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -399,7 +399,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="26"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView27"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -410,7 +410,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="27"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView28"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -421,7 +421,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:text="28"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView29"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -433,7 +433,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="29"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView30"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -445,7 +445,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="30"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView31"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -457,7 +457,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="31"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView32"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -469,7 +469,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="32"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView33"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -481,7 +481,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="33"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView34"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -493,7 +493,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="34"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView35"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -505,7 +505,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22"
         app:text="35"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView36"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -517,7 +517,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:text="36"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView37"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -529,7 +529,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:text="37"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView38"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -541,7 +541,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:text="38"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView39"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -553,7 +553,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:text="39"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView40"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -565,7 +565,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:text="40"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView41"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -577,7 +577,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         app:text="41"/>
 
-    <eijenson.braveflontiercarendar.view.custom.CalendarColumn
+    <eijenson.bravefrontiercalendar.view.custom.CalendarColumn
         android:id="@+id/textView42"
         android:layout_width="0dp"
         android:layout_height="0dp"

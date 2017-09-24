@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ああbraveFlontierCarendar</string>
+    <string name="app_name">ああbravefrontiercalendar</string>
 
     <string name="label_month">yyyy年MM月</string>
     <string name="prev"><![CDATA[<]]></string>
