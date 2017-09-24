@@ -14,10 +14,12 @@ import eijenson.braveflontiercarendar.R
 import eijenson.braveflontiercarendar.message.RxBus
 import eijenson.braveflontiercarendar.presenter.EventListPresenter
 import eijenson.braveflontiercarendar.repository.models.BraveNews
+import eijenson.braveflontiercarendar.view.EventDetailActivity
 import eijenson.braveflontiercarendar.view.adapter.EventListAdapter
 import kotlinx.android.synthetic.main.fragment_event_list.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
+
 
 /**
  * Created by eijenson on 2017/09/12.
@@ -75,9 +77,11 @@ class EventListFragment : RxFragment() {
     fun setText(data: List<BraveNews>) {
         val adapter = EventListAdapter(context, R.layout.item_event, data)
         list_event.adapter = adapter
-        list_event.setOnItemClickListener { adapterView, view, position, id ->
+        list_event.setOnItemClickListener { adapterView, _, position, _ ->
             val item = adapterView.getItemAtPosition(position) as BraveNews
             showToast(item.url)
+            val intent = EventDetailActivity.createIntent(context, item.detail)
+            startActivity(intent)
         }
     }
 
