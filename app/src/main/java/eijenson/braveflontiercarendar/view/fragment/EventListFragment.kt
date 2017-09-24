@@ -73,8 +73,7 @@ class EventListFragment : RxFragment() {
     }
 
     fun setText(data: List<BraveNews>) {
-        val adapter: EventListAdapter
-        adapter = EventListAdapter(context, R.layout.item_event, data)
+        val adapter = EventListAdapter(context, R.layout.item_event, data)
         list_event.adapter = adapter
         list_event.setOnItemClickListener { adapterView, view, position, id ->
             val item = adapterView.getItemAtPosition(position) as BraveNews
