@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import eijenson.braveflontiercarendar.R
 import eijenson.braveflontiercarendar.repository.local.CalendarRepository
+import java.util.*
 
 /**
  * カレンダーView
@@ -29,7 +30,7 @@ class MyCalendarView_kotlin @JvmOverloads constructor(
             val tvId = "textView" + i
             val resId = resources.getIdentifier(tvId, "id", context.packageName)
             val columnKotlin: CalendarColumn_kotlin? = findViewById<CalendarColumn_kotlin>(resId)
-            columnKotlin?.text = list.first().date.toString()
+            columnKotlin?.text = Date(list.first().time).toString()
             list = list.drop(1)
         }
     }

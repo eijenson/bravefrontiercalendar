@@ -1,6 +1,9 @@
 package eijenson.braveflontiercarendar.view.custom
 
 import android.content.Context
+import android.os.Build
+import android.support.annotation.ColorInt
+import android.support.annotation.ColorRes
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
@@ -30,9 +33,19 @@ class CalendarColumn_kotlin @JvmOverloads constructor(
         View.inflate(context, R.layout.calendar_column, this)
         val a = context.obtainStyledAttributes(attrs, R.styleable.CalendarColumn)
         val text: String? = a.getString(R.styleable.CalendarColumn_text)
-        val textColor = a.getColor(R.styleable.CalendarColumn_textColor, context.resources.getColor(R.color.black))
+        val textColor = a.getColor(R.styleable.CalendarColumn_textColor, getColor(context, R.color.black))
         text_view.text = text
         text_view.setTextColor(textColor)
         a.recycle()
+    }
+
+    @Suppress("DEPRECATION")
+    @ColorInt
+    private fun getColor(context: Context, @ColorRes id: Int): Int {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return context.getColor(id)
+        } else {
+            return context.resources.getColor(id)
+        }
     }
 }

@@ -2,7 +2,7 @@ package eijenson.braveflontiercarendar
 
 import eijenson.braveflontiercarendar.extensions.set
 import eijenson.braveflontiercarendar.repository.local.CalendarRepository
-import junit.framework.Assert
+import org.junit.Assert
 import org.junit.Test
 import java.util.*
 
