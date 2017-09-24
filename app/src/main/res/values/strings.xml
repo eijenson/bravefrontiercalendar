@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">ああbraveFlontierCarendar</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_month">yyyy年MM月</string>
     <string name="prev"><![CDATA[<]]></string>
     <string name="next"><![CDATA[>]]></string>
+    <string name="menu_title_calendar">Calendar</string>
+    <string name="menu_title_list">list</string>
+    <string name="menu_title_develop">develop</string>
+    <string name="btn_progress_ber">プログレスバー</string>
+    <string name="btn_clear_data">ローカルデータクリア</string>
+    <string name="label_default_progress_persent">XX/XX</string>
 </resources>

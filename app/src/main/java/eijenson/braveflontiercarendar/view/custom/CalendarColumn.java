@@ -27,7 +27,8 @@ public class CalendarColumn extends LinearLayout {
         this(context, attrs, defStyleAttr, 0);
     }
 
-    public CalendarColumn(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    @SuppressWarnings("WeakerAccess")
+    public CalendarColumn(Context context, AttributeSet attrs, int defStyleAttr, @SuppressWarnings("SameParameterValue") int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }

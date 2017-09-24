@@ -11,7 +11,7 @@ import java.util.*
 /**
  * カレンダーView
  */
-class MyCalendarView_kotlin @JvmOverloads constructor(
+class MyCalendarViewKotlin @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0) : ConstraintLayout(context, attrs, defStyleAttr) {
@@ -29,7 +29,7 @@ class MyCalendarView_kotlin @JvmOverloads constructor(
         for (i in first..first + num) {
             val tvId = "textView" + i
             val resId = resources.getIdentifier(tvId, "id", context.packageName)
-            val columnKotlin: CalendarColumn_kotlin? = findViewById<CalendarColumn_kotlin>(resId)
+            val columnKotlin: CalendarColumnKotlin? = findViewById(resId)
             columnKotlin?.text = Date(list.first().time).toString()
             list = list.drop(1)
         }

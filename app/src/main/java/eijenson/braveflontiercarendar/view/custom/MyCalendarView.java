@@ -39,6 +39,7 @@ public class MyCalendarView extends ConstraintLayout {
     public MyCalendarView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
+
     public MyCalendarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);

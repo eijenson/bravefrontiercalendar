@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.calendar_column.view.*
 /**
  * Created by kobayashimakoto on 2017/08/13.
  */
-class CalendarColumn_kotlin @JvmOverloads constructor(
+class CalendarColumnKotlin @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0,
