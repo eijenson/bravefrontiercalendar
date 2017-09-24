@@ -10,7 +10,7 @@ import kotlin.concurrent.withLock
 /**
  * お知らせ情報系のロジックを実装するクラス
  */
-class BraveNewsUseCase() {
+class BraveNewsUseCase {
     @Inject lateinit var repository: BraveNewsRepository
 
     object Singleton {

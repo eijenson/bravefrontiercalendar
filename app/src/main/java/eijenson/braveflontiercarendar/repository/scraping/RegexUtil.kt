@@ -59,7 +59,7 @@ object RegexUtil {
     }
 
     fun formatDateTime(date: Date?): String? {
-        if (date == null) return null;
+        if (date == null) return null
         return dateTimeFormatter.format(date)
     }
 }

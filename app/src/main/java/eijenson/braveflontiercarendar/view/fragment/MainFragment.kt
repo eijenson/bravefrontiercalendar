@@ -10,7 +10,7 @@ import eijenson.braveflontiercarendar.R
 /**
  * Created by eijenson on 2017/09/12.
  */
-public class MainFragment : Fragment() {
+class MainFragment : Fragment() {
     companion object {
         fun getInstance(): MainFragment {
             return MainFragment()

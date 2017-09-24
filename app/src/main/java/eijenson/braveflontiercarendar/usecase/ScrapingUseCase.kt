@@ -10,7 +10,7 @@ import eijenson.braveflontiercarendar.repository.scraping.RegexUtil
 /**
  * スクレイピングを指示するクラス
  */
-class ScrapingUseCase() {
+class ScrapingUseCase {
     fun startScraping(): List<BraveNews> {
         val news = BraveNewsScraping()
         RxBus.send(news.getTitleList().size.toString())

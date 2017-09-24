@@ -20,9 +20,9 @@ class EventListAdapter(val context: Context, val resource: Int, val objects: Lis
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         val view: View?
         if (convertView == null) {
-            view = layoutInflater.inflate(resource, parent, false);
+            view = layoutInflater.inflate(resource, parent, false)
         } else {
-            view = convertView;
+            view = convertView
         }
         val title = view?.findViewById<TextView>(R.id.title)
         val period = view?.findViewById<TextView>(R.id.period)
