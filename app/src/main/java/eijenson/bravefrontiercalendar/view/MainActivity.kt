@@ -40,14 +40,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun initFragment() {
+    private fun initFragment() {
         val fragment = CalendarFragment.newInstance()
         fragmentManager.beginTransaction()
                 .add(R.id.main_content, fragment)
                 .commit()
     }
 
-    fun moveToFragment(fragment: Fragment) {
+    private fun moveToFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
                 .replace(R.id.main_content, fragment)
                 .commit()

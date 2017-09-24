@@ -13,17 +13,13 @@ import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
 
 /**
  * Created by eijenson on 2017/09/21.
+ * イベントリストのアダプタークラス
  */
-class EventListAdapter(val context: Context, val resource: Int, val objects: List<BraveNews>) : BaseAdapter() {
-    val layoutInflater: LayoutInflater = LayoutInflater.from(context)
+class EventListAdapter(val context: Context, val resource: Int, private val objects: List<BraveNews>) : BaseAdapter() {
+    private val layoutInflater: LayoutInflater = LayoutInflater.from(context)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
-        val view: View?
-        if (convertView == null) {
-            view = layoutInflater.inflate(resource, parent, false)
-        } else {
-            view = convertView
-        }
+        val view = convertView ?: layoutInflater.inflate(resource, parent, false)
         val title = view?.findViewById<TextView>(R.id.title)
         val period = view?.findViewById<TextView>(R.id.period)
         val startTime = view?.findViewById<TextView>(R.id.startTime)
@@ -40,7 +36,7 @@ class EventListAdapter(val context: Context, val resource: Int, val objects: Lis
     }
 
     override fun getItem(position: Int): BraveNews {
-        return objects.get(position)
+        return objects[position]
     }
 
     override fun getItemId(position: Int): Long {

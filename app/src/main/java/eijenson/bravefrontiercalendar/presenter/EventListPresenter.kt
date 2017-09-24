@@ -14,9 +14,9 @@ import java.io.IOException
 /**
  * メイン画面のUIと画面遷移以外のことをする
  */
-class EventListPresenter(var eventListFragment: EventListFragment?) {
+class EventListPresenter(private var eventListFragment: EventListFragment?) {
 
-    val usecase = BraveNewsUseCase()
+    private val useCase = BraveNewsUseCase()
 
     fun setHtml() = launch(UI) {
         try {
@@ -44,9 +44,9 @@ class EventListPresenter(var eventListFragment: EventListFragment?) {
     }
 
 
-    fun getHtmlAsync() = async(CommonPool) {
+    private fun getHtmlAsync() = async(CommonPool) {
         try {
-            return@async usecase.getHtml()
+            return@async useCase.getHtml()
         } catch (e: Exception) {
             e.printStackTrace()
             throw e

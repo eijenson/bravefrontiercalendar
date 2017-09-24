@@ -9,5 +9,5 @@
     <string name="menu_title_develop">develop</string>
     <string name="btn_progress_ber">プログレスバー</string>
     <string name="btn_clear_data">ローカルデータクリア</string>
-    <string name="label_default_progress_persent">XX/XX</string>
+    <string name="label_default_progress_percent">XX/XX</string>
 </resources>

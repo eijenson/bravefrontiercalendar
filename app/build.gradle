@@ -38,10 +38,10 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     // [ネストが少ないレイアウト] (SDK Manager)
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    // [htmlのperser](https://jsoup.org/download)
+    // [htmlのparser](https://jsoup.org/download)
     implementation 'org.jsoup:jsoup:1.10.3'
     // [同期処理](https://github.com/Kotlin/kotlinx.coroutines)
-    def coroutines_version = '0.17'
+    def coroutines_version = '0.18'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
     // [ローカルDB] (https://github.com/gfx/Android-Orma)

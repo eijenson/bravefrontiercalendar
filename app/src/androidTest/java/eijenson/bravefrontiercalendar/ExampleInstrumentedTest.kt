@@ -20,8 +20,8 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
 
-    lateinit var context: Context
-    lateinit var repository: BraveNewsRepositoryImpl
+    private lateinit var context: Context
+    private lateinit var repository: BraveNewsRepositoryImpl
 
     @Before
     fun before() {
@@ -79,7 +79,7 @@ class ExampleInstrumentedTest {
         }
     }
 
-    val BraveNews.startTimeJapan: String?
+    private val BraveNews.startTimeJapan: String?
         get() = RegexUtil.formatDateTime(startTime)
 
 }

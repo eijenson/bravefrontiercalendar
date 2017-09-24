@@ -10,6 +10,7 @@ import kotlinx.coroutines.experimental.launch
 
 /**
  * Created by eijenson on 2017/09/10.
+ * 開発用の処理をまとめたクラス
  */
 object DevUtils {
     fun clear() = launch(UI) {
@@ -24,7 +25,7 @@ object DevUtils {
         }.await()
     }
 
-    var percent = 0
+    private var percent = 0
     fun dev() {
         RxBus.send("10")
         RxBus.send(percent)

@@ -52,11 +52,11 @@ class EventListFragment : RxFragment() {
         //TODO:データクラスにして一本化
         RxBus.listen<Int>().bindToLifecycle(this).subscribe {
             changeProgressPercent(it)
-            setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
+            setPercentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
         }
         RxBus.listen<String>().bindToLifecycle(this).subscribe {
             setProgressMax(it.toInt())
-            setPersentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
+            setPercentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
         }
         RxBus.listen<List<BraveNews>>().bindToLifecycle(this).subscribe {
             setText(it)
@@ -70,11 +70,11 @@ class EventListFragment : RxFragment() {
         Log.d("EventListFragment", "onDestroy")
     }
 
-    fun setPersentText(text: String) = launch(UI) {
-        progress_bar_persent.text = text
+    private fun setPercentText(text: String) = launch(UI) {
+        progress_bar_percent.text = text
     }
 
-    fun setText(data: List<BraveNews>) {
+    private fun setText(data: List<BraveNews>) {
         val adapter = EventListAdapter(context, R.layout.item_event, data)
         list_event.adapter = adapter
         list_event.setOnItemClickListener { adapterView, _, position, _ ->
@@ -90,25 +90,25 @@ class EventListFragment : RxFragment() {
     }
 
     override fun getContext(): Context {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return super.getContext()
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            super.getContext()
         } else {
-            return activity
+            activity
         }
 
     }
 
     fun showProgressBar() {
         progress_bar_loading.visibility = View.VISIBLE
-        progress_bar_persent.visibility = View.VISIBLE
+        progress_bar_percent.visibility = View.VISIBLE
     }
 
-    fun changeProgressPercent(percent: Int) {
+    private fun changeProgressPercent(percent: Int) {
         println(percent)
         progress_bar_loading.progress = percent
     }
 
-    fun setProgressMax(max: Int) {
+    private fun setProgressMax(max: Int) {
         println(max)
         progress_bar_loading.max = max
     }
