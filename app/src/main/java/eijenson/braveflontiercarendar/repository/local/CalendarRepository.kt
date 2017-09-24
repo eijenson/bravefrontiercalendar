@@ -24,8 +24,8 @@ class CalendarRepository {
 
     fun getCalendar(): List<Date> {
         c.set(Calendar.DATE, 1)
-        c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
         val month = c.get(Calendar.MONTH)
+        c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY)
         val list = ArrayList<Date>()
         do {
             list.addAll(getWeek())
