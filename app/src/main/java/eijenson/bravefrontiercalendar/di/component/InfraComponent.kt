@@ -6,7 +6,7 @@ import eijenson.bravefrontiercalendar.usecase.BraveNewsUseCase
 import javax.inject.Singleton
 
 /**
- * Daggerのインフラ層のコンポネントクラス
+ * Daggerのインフラ層のコンポーネントクラス
  */
 @Singleton
 @Component(modules = arrayOf(InfraModule::class))

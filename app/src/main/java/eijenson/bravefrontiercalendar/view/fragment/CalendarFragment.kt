@@ -9,6 +9,7 @@ import eijenson.bravefrontiercalendar.R
 
 /**
  * Created by eijenson on 2017/09/12.
+ * カレンダーを表示する画面のフラグメント
  */
 class CalendarFragment : Fragment() {
 

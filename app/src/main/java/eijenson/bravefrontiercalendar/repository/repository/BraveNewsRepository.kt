@@ -4,6 +4,7 @@ import eijenson.bravefrontiercalendar.repository.models.BraveNews
 
 /**
  * Created by eijenson on 2017/08/24.
+ * お知らせ情報のレポジトリクラス
  */
 interface BraveNewsRepository {
     fun insert(models: Iterable<BraveNews>)

@@ -12,6 +12,7 @@ import eijenson.bravefrontiercalendar.R;
 
 /**
  * Created by eijenson on 2017/08/19.
+ * カレンダーの一日分のカスタムビュー
  */
 
 public class CalendarColumn extends LinearLayout {

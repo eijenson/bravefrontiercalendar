@@ -8,16 +8,12 @@ import kotlin.collections.ArrayList
  * Created by eijenson on 2017/08/18.
  * カレンダーを取得するレポジトリ
  */
-class CalendarRepository {
+class CalendarRepository(date: Date) {
 
     private val WEEK_NUM = 7
     private val c = Calendar.getInstance()
 
-    constructor() {
-        c.truncationTime()
-    }
-
-    constructor(date: Date) {
+    init {
         c.time = date
         c.truncationTime()
     }

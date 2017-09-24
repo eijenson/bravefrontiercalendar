@@ -5,6 +5,7 @@ import io.reactivex.subjects.PublishSubject
 
 /**
  * Created by eijenson on 2017/09/10.
+ * RxでEventBusを行うクラス
  */
 object RxBus {
     // 講読開始した時に今までの通知を全部受け取る
