@@ -1,5 +1,6 @@
 package eijenson.braveflontiercarendar.view.fragment
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,7 @@ import kotlinx.coroutines.experimental.launch
 
 /**
  * Created by eijenson on 2017/09/12.
+ * イベントリストを表示するフラグメント
  */
 class EventListFragment : RxFragment() {
 
@@ -40,7 +42,7 @@ class EventListFragment : RxFragment() {
         presenter = EventListPresenter(this)
         //TODO:リストの下が見えない
         presenter.setHtml()
-        Log.d("EventListFragment","onViewCreated")
+        Log.d("EventListFragment", "onViewCreated")
     }
 
     override fun onResume() {
@@ -63,7 +65,7 @@ class EventListFragment : RxFragment() {
     override fun onDestroy() {
         super.onDestroy()
         presenter.onDestroy()
-        Log.d("EventListFragment","onDestroy")
+        Log.d("EventListFragment", "onDestroy")
     }
 
     fun setPersentText(text: String) = launch(UI) {
@@ -72,20 +74,25 @@ class EventListFragment : RxFragment() {
 
     fun setText(data: List<BraveNews>) {
         val adapter: EventListAdapter
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            adapter = EventListAdapter(context, R.layout.item_event, data)
-        } else {
-            adapter = EventListAdapter(activity, R.layout.item_event, data)
-        }
+        adapter = EventListAdapter(context, R.layout.item_event, data)
         list_event.adapter = adapter
+        list_event.setOnItemClickListener { adapterView, view, position, id ->
+            val item = adapterView.getItemAtPosition(position) as BraveNews
+            showToast(item.url)
+        }
     }
 
     fun showToast(text: String) {
+        Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun getContext(): Context {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+            return super.getContext()
         } else {
-            Toast.makeText(activity, text, Toast.LENGTH_SHORT).show()
+            return activity
         }
+
     }
 
     fun showProgressBar() {
