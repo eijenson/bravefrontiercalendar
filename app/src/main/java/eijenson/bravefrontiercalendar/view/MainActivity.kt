@@ -2,7 +2,7 @@ package eijenson.bravefrontiercalendar.view
 
 import android.app.Fragment
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import com.trello.rxlifecycle2.components.RxActivity
 import eijenson.bravefrontiercalendar.R
 import eijenson.bravefrontiercalendar.view.fragment.CalendarFragment
 import eijenson.bravefrontiercalendar.view.fragment.DevelopFragment
@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 /**
  * メインアクティビティ
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : RxActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
