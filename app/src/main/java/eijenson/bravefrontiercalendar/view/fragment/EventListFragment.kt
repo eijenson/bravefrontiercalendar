@@ -14,6 +14,7 @@ import eijenson.bravefrontiercalendar.R
 import eijenson.bravefrontiercalendar.message.RxBus
 import eijenson.bravefrontiercalendar.presenter.EventListPresenter
 import eijenson.bravefrontiercalendar.repository.models.BraveNews
+import eijenson.bravefrontiercalendar.repository.models.Progress
 import eijenson.bravefrontiercalendar.view.EventDetailActivity
 import eijenson.bravefrontiercalendar.view.adapter.EventListAdapter
 import kotlinx.android.synthetic.main.fragment_event_list.*
@@ -49,14 +50,10 @@ class EventListFragment : RxFragment() {
 
     override fun onResume() {
         super.onResume()
-        //TODO:データクラスにして一本化
-        RxBus.listen<Int>().bindToLifecycle(this).subscribe {
-            changeProgressPercent(it)
-            setPercentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
-        }
-        RxBus.listen<String>().bindToLifecycle(this).subscribe {
-            setProgressMax(it.toInt())
-            setPercentText(progress_bar_loading.progress.toString() + "/" + progress_bar_loading.max)
+        RxBus.listen<Progress>().bindToLifecycle(this).subscribe {
+            changeProgressPercent(it.now)
+            setProgressMax(it.max)
+            setPercentText(it.now.toString() + "/" + it.max.toString())
         }
         RxBus.listen<List<BraveNews>>().bindToLifecycle(this).subscribe {
             setText(it)
@@ -114,6 +111,7 @@ class EventListFragment : RxFragment() {
     }
 
     fun hideProgressBar() {
-        //progress_bar_loading.visibility = View.INVISIBLE
+        progress_bar_loading.visibility = View.GONE
+        progress_bar_percent.visibility = View.GONE
     }
 }
