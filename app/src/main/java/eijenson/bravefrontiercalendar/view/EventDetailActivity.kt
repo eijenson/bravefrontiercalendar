@@ -25,8 +25,14 @@ class EventDetailActivity : RxActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_detail)
+        actionBar.setDisplayHomeAsUpEnabled(true)
         val text = intent.getStringExtra(TEXT)
         tv_text.text = text
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(0, 0)
     }
 
 }

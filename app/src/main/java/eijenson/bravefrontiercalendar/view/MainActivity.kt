@@ -18,6 +18,7 @@ class MainActivity : RxActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initFragment()
+        setActionBar(tool_bar)
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             if (bottom_navigation.selectedItemId == item.itemId) {
                 return@setOnNavigationItemSelectedListener true

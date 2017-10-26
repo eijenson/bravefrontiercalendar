@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context="eijenson.bravefrontiercalendar.view.MainActivity">
 
+    <Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@android:style/ThemeOverlay.Material.ActionBar"/>
+
     <fragment
         android:id="@+id/main_content"
         android:name="eijenson.bravefrontiercalendar.view.fragment.MainFragment"
@@ -15,7 +21,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
         tools:layout="@layout/fragment_calendar"/>
 
     <android.support.design.widget.BottomNavigationView

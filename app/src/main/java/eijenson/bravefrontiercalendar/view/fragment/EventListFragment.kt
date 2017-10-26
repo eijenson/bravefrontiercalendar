@@ -78,7 +78,8 @@ class EventListFragment : RxFragment() {
             val item = adapterView.getItemAtPosition(position) as BraveNews
             showToast(item.url)
             val intent = EventDetailActivity.createIntent(context, item.detail)
-            startActivity(intent)
+            activity.startActivity(intent)
+            activity.overridePendingTransition(0, 0)
         }
     }
 
