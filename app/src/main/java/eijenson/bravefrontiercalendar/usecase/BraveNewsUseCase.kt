@@ -23,7 +23,7 @@ class BraveNewsUseCase {
 
     fun getHtml(): List<BraveNews> {
         Singleton.lock.withLock {
-            if (shouldScraping()) {
+            if (!hasBraveNews()) {
                 repository.insert(ScrapingUseCase().startScraping())
             }
         }
@@ -33,7 +33,7 @@ class BraveNewsUseCase {
     /**
      * スクレイピングをする必要があるのかを返す
      */
-    private fun shouldScraping(): Boolean {
-        return repository.isEmpty()
+    fun hasBraveNews(): Boolean {
+        return !repository.isEmpty()
     }
 }

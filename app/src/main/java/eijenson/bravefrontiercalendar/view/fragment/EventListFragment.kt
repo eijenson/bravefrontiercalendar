@@ -51,7 +51,7 @@ class EventListFragment : RxFragment() {
     override fun onResume() {
         super.onResume()
         RxBus.listen<Progress>().bindToLifecycle(this).subscribe {
-            changeProgressPercent(it.now)
+            setProgressPercent(it.now)
             setProgressMax(it.max)
             setPercentText(it.now.toString() + "/" + it.max.toString())
         }
@@ -100,13 +100,11 @@ class EventListFragment : RxFragment() {
         progress_bar_percent.visibility = View.VISIBLE
     }
 
-    private fun changeProgressPercent(percent: Int) {
-        println(percent)
+    private fun setProgressPercent(percent: Int) {
         progress_bar_loading.progress = percent
     }
 
     private fun setProgressMax(max: Int) {
-        println(max)
         progress_bar_loading.max = max
     }
 

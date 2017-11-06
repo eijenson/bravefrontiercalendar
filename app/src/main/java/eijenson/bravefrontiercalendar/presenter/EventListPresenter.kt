@@ -20,7 +20,8 @@ class EventListPresenter(private var eventListFragment: EventListFragment?) {
 
     fun setHtml() = launch(UI) {
         try {
-            eventListFragment?.showProgressBar()
+            // ローカルデータがなければ、通信進捗用プログレスバーを出す
+            if (!useCase.hasBraveNews()) eventListFragment?.showProgressBar()
             val result = getHtmlAsync().await()
             RxBus.send(result)
         } catch (e: CancellationException) {
