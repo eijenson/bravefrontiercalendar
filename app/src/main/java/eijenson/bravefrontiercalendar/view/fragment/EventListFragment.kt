@@ -79,7 +79,6 @@ class EventListFragment : RxFragment() {
             showToast(item.url)
             val intent = EventDetailActivity.createIntent(context, item.detail)
             activity.startActivity(intent)
-            activity.overridePendingTransition(0, 0)
         }
     }
 
