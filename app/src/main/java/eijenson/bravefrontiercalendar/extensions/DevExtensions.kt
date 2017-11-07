@@ -16,6 +16,6 @@ fun rap(message: String) {
 
 
 fun reset() {
-    time = System.currentTimeMillis()
+    time = 0
     println("時間リセット")
 }
