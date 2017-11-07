@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.trello.rxlifecycle2.components.RxActivity
 import eijenson.bravefrontiercalendar.R
+import eijenson.bravefrontiercalendar.view.fragment.EventDetailFragment
 import kotlinx.android.synthetic.main.activity_event_detail.*
 
 /**
@@ -29,7 +30,11 @@ class EventDetailActivity : RxActivity() {
         setActionBar(tool_bar)
         actionBar.setDisplayHomeAsUpEnabled(true)
         val text = intent.getStringExtra(TEXT)
-        tv_text.text = text
+        val fragment = EventDetailFragment.newInstance(text)
+        fragmentManager.beginTransaction()
+                .add(R.id.main_content, fragment)
+                .commit()
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
