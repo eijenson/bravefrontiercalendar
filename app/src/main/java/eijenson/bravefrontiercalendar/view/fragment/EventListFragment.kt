@@ -77,7 +77,7 @@ class EventListFragment : RxFragment() {
         list_event.setOnItemClickListener { adapterView, _, position, _ ->
             val item = adapterView.getItemAtPosition(position) as BraveNews
             showToast(item.url)
-            val intent = EventDetailActivity.createIntent(context, item.detail)
+            val intent = EventDetailActivity.createIntent(context, item.url)
             activity.startActivity(intent)
         }
     }

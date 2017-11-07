@@ -11,7 +11,7 @@ object RegexUtil {
     private val date = """\d{4}年\d{1,2}月\d{1,2}日\([月火水木金土日]\)"""
     private val time = """\d{1,2}:\d{1,2}:\d{1,2}"""
     private val dateTime = """$date $time"""
-    private val eventDate = """$date ($time|$maintenance)"""
+    private val eventDate = """$date ?($time|$maintenance)"""
     private val period = """$eventDate[\s]*～.?$eventDate"""
 
     private val dateTimeFormatter = SimpleDateFormat("yyyy年MM月dd日(E) HH:mm:ss", Locale.JAPAN)
