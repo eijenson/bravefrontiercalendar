@@ -7,7 +7,8 @@
     <string name="menu_title_calendar">Calendar</string>
     <string name="menu_title_list">list</string>
     <string name="menu_title_develop">develop</string>
-    <string name="btn_progress_ber">プログレスバー</string>
+    <string name="btn_dev">適当に削除</string>
     <string name="btn_clear_data">ローカルデータクリア</string>
+    <string name="btn_update">データ更新</string>
     <string name="label_default_progress_percent">XX/XX</string>
 </resources>

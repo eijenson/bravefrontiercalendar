@@ -42,6 +42,10 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
         }
     }
 
+    override fun delete(id: Long) {
+        database.deleteFromBraveNews().idEq(id).execute()
+    }
+
     override fun deleteAll() {
         database.deleteAll()
     }

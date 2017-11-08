@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import eijenson.bravefrontiercalendar.DevUtils
 import eijenson.bravefrontiercalendar.R
 import kotlinx.android.synthetic.main.fragment_develop.*
+import kotlinx.coroutines.experimental.CommonPool
+import kotlinx.coroutines.experimental.async
 
 class DevelopFragment : Fragment() {
 
@@ -28,7 +30,10 @@ class DevelopFragment : Fragment() {
             DevUtils.clear()
         }
         dev.setOnClickListener {
-            DevUtils.dev()
+            async(CommonPool) { DevUtils.dev() }
+        }
+        update.setOnClickListener {
+            async(CommonPool) { DevUtils.update() }
         }
     }
 }

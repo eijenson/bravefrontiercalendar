@@ -17,6 +17,8 @@ interface BraveNewsRepository {
 
     fun update(braveNews: BraveNews)
 
+    fun delete(id: Long)
+
     fun deleteAll()
 
     fun countAll(): Int

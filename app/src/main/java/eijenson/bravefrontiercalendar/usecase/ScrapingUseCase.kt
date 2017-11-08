@@ -12,21 +12,32 @@ import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
  * スクレイピングを指示するクラス
  */
 class ScrapingUseCase {
+    private val news = BraveNewsScraping()
+
     fun startScraping(): List<BraveNews> {
-        val news = BraveNewsScraping()
         RxBus.send(Progress(0, news.getTitleList().size))
         return news.getTitleList().zip(news.getUrlList()).mapIndexed { index, it ->
-            val newsDetail = BraveNewsDetailScraping(it.second)
-            val timeList = RegexUtil.dateTime(newsDetail.period)
-            sleep()
             RxBus.send(Progress(index + 1, news.getTitleList().size))
-            BraveNews(title = it.first,
-                    detail = newsDetail.report,
-                    period = newsDetail.period,
-                    url = it.second,
-                    startTime = timeList?.first(),
-                    endTime = timeList?.last())
+            getBraveNews(it.first, it.second)
         }
+    }
+
+    fun getList(): List<Pair<String, String>> {
+        //TODO:Pairじゃなくて専用のクラスを作る
+        return news.getTitleList().zip(news.getUrlList())
+    }
+
+    fun getBraveNews(title: String, url: String): BraveNews {
+        val newsDetail = BraveNewsDetailScraping(url)
+        val timeList = RegexUtil.dateTime(newsDetail.period)
+        sleep()
+        return BraveNews(title = title,
+                detail = newsDetail.report,
+                period = newsDetail.period,
+                url = url,
+                startTime = timeList?.first(),
+                endTime = timeList?.last())
+
     }
 
     private fun sleep() {
