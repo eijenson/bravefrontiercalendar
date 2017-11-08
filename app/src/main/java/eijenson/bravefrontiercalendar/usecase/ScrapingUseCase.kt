@@ -17,10 +17,8 @@ class ScrapingUseCase {
         RxBus.send(Progress(0, news.getTitleList().size))
         return news.getTitleList().zip(news.getUrlList()).mapIndexed { index, it ->
             val newsDetail = BraveNewsDetailScraping(it.second)
-            Log.d("ScrapingManager", "start sleep")
-            Thread.sleep(1000)
-            Log.d("ScrapingManager", "stop sleep")
             val timeList = RegexUtil.dateTime(newsDetail.period)
+            sleep()
             RxBus.send(Progress(index + 1, news.getTitleList().size))
             BraveNews(title = it.first,
                     detail = newsDetail.report,
@@ -29,5 +27,11 @@ class ScrapingUseCase {
                     startTime = timeList?.first(),
                     endTime = timeList?.last())
         }
+    }
+
+    private fun sleep() {
+        Log.d("ScrapingManager", "start sleep")
+        Thread.sleep(1000)
+        Log.d("ScrapingManager", "stop sleep")
     }
 }
