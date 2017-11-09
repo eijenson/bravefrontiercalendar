@@ -37,7 +37,6 @@ class ScrapingUseCase {
                 url = url,
                 startTime = timeList?.first(),
                 endTime = timeList?.last())
-
     }
 
     private fun sleep() {

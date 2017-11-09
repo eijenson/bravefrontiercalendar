@@ -10,5 +10,8 @@
     <string name="btn_dev">適当に削除</string>
     <string name="btn_clear_data">ローカルデータクリア</string>
     <string name="btn_update">データ更新</string>
+    <string name="btn_notification">通知</string>
     <string name="label_default_progress_percent">XX/XX</string>
+
+    <string name="channel_name">ああbravefrontiercalendar</string>
 </resources>

@@ -35,5 +35,8 @@ class DevelopFragment : Fragment() {
         update.setOnClickListener {
             async(CommonPool) { DevUtils.update() }
         }
+        notification.setOnClickListener {
+            async(CommonPool) { DevUtils.notification(activity) }
+        }
     }
 }
