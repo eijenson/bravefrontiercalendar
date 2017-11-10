@@ -64,7 +64,7 @@ object DevUtils {
         val mBuilder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Notification.Builder(context, "channel_1")
         } else {
-            //TODO:ここが指摘される
+            @Suppress("DEPRECATION")
             Notification.Builder(context)
         }
 
