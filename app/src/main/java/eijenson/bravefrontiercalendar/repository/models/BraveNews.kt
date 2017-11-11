@@ -15,7 +15,9 @@ data class BraveNews(
         @Setter("title") @Column var title: String,
         @Setter("detail") @Column var detail: String,
         @Setter("period") @Column(indexed = true) var period: String?,
-        @Setter("url") @Column var url: String,
+        @Setter("url") @Column(indexed = true) var url: String,
         @Setter("startTime") @Column(indexed = true) var startTime: Date? = null,
-        @Setter("endTime") @Column var endTime: Date? = null
+        @Setter("endTime") @Column var endTime: Date? = null,
+        @Setter("createTime") @Column(indexed = true) var createTime: Date? = Date(),
+        @Setter("isViewingSite") @Column(indexed = true) var isViewingSite: Boolean? = true
 )

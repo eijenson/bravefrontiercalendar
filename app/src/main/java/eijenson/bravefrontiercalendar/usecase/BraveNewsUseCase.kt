@@ -33,11 +33,14 @@ class BraveNewsUseCase {
     }
 
     fun update() {
-        val localList = repository.selectAll().map { it.url }
+        repository.updateAllIsViewingSiteToFalse()
         val serverList = scrapingUseCase.getList()
         serverList.forEach {
-            if (!localList.contains(it.second)) {
+            val braveNews = repository.selectWhereUrl(it.second)
+            if (braveNews == null) {
                 repository.insert(scrapingUseCase.getBraveNews(it.first, it.second))
+            } else {
+                repository.updateIsViewingSiteToTrue(braveNews.id)
             }
         }
     }

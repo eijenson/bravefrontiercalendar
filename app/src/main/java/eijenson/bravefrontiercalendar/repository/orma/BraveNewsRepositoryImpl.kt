@@ -25,6 +25,11 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
         return model.valueOrNull()
     }
 
+    override fun selectWhereUrl(url: String): BraveNews? {
+        val model = database.selectFromBraveNews().urlEq(url)
+        return model.valueOrNull()
+    }
+
     override fun selectAll(): List<BraveNews> {
         return database.selectFromBraveNews().orderBy("startTime is null asc").orderByStartTimeAsc().toList()
     }
@@ -40,6 +45,18 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
                     .endTime(endTime)
                     .execute()
         }
+    }
+
+    override fun updateIsViewingSiteToTrue(id: Long) {
+        database.updateBraveNews().idEq(id)
+                .isViewingSite(true)
+                .execute()
+    }
+
+    override fun updateAllIsViewingSiteToFalse() {
+        database.updateBraveNews().isViewingSiteEq(true)
+                .isViewingSite(false)
+                .execute()
     }
 
     override fun delete(id: Long) {

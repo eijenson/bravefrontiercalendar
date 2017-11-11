@@ -13,9 +13,15 @@ interface BraveNewsRepository {
 
     fun select(id: Long): BraveNews?
 
+    fun selectWhereUrl(url: String): BraveNews?
+
     fun selectAll(): List<BraveNews>
 
     fun update(braveNews: BraveNews)
+
+    fun updateIsViewingSiteToTrue(id: Long)
+
+    fun updateAllIsViewingSiteToFalse()
 
     fun delete(id: Long)
 
@@ -24,5 +30,4 @@ interface BraveNewsRepository {
     fun countAll(): Int
 
     fun isEmpty(): Boolean
-
 }
