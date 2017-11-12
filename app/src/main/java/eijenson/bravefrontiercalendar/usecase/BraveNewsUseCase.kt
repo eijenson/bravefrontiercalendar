@@ -29,7 +29,7 @@ class BraveNewsUseCase {
                 repository.insert(scrapingUseCase.startScraping())
             }
         }
-        return repository.selectAll()
+        return repository.selectViewing()
     }
 
     fun update() {

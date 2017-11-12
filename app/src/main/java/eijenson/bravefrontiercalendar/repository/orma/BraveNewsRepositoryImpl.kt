@@ -30,6 +30,14 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
         return model.valueOrNull()
     }
 
+    override fun selectViewing(): List<BraveNews> {
+        return database.selectFromBraveNews()
+                .isViewingSiteEq(true)
+                .orderBy("startTime is null asc")
+                .orderByStartTimeAsc()
+                .toList()
+    }
+
     override fun selectAll(): List<BraveNews> {
         return database.selectFromBraveNews().orderBy("startTime is null asc").orderByStartTimeAsc().toList()
     }

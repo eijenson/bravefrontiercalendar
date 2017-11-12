@@ -30,4 +30,5 @@ interface BraveNewsRepository {
     fun count(): Int
 
     fun isEmpty(): Boolean
+    fun selectViewing(): List<BraveNews>
 }
