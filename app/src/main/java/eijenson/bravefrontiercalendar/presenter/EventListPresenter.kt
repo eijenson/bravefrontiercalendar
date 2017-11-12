@@ -2,8 +2,8 @@ package eijenson.bravefrontiercalendar.presenter
 
 import android.util.Log
 import eijenson.bravefrontiercalendar.message.RxBus
+import eijenson.bravefrontiercalendar.ui.view.fragment.EventListFragment
 import eijenson.bravefrontiercalendar.usecase.BraveNewsUseCase
-import eijenson.bravefrontiercalendar.view.fragment.EventListFragment
 import kotlinx.coroutines.experimental.CancellationException
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI

@@ -1,4 +1,4 @@
-package eijenson.bravefrontiercalendar.view.fragment
+package eijenson.bravefrontiercalendar.ui.view.fragment
 
 import android.content.Context
 import android.os.Build
@@ -15,8 +15,8 @@ import eijenson.bravefrontiercalendar.message.RxBus
 import eijenson.bravefrontiercalendar.presenter.EventListPresenter
 import eijenson.bravefrontiercalendar.repository.models.BraveNews
 import eijenson.bravefrontiercalendar.repository.models.Progress
-import eijenson.bravefrontiercalendar.view.EventDetailActivity
-import eijenson.bravefrontiercalendar.view.adapter.EventListAdapter
+import eijenson.bravefrontiercalendar.ui.view.EventDetailActivity
+import eijenson.bravefrontiercalendar.ui.view.adapter.EventListAdapter
 import kotlinx.android.synthetic.main.fragment_event_list.*
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch

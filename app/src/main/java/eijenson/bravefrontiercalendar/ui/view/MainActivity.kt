@@ -1,12 +1,12 @@
-package eijenson.bravefrontiercalendar.view
+package eijenson.bravefrontiercalendar.ui.view
 
 import android.app.Fragment
 import android.os.Bundle
 import com.trello.rxlifecycle2.components.RxActivity
 import eijenson.bravefrontiercalendar.R
-import eijenson.bravefrontiercalendar.view.fragment.CalendarFragment
-import eijenson.bravefrontiercalendar.view.fragment.DevelopFragment
-import eijenson.bravefrontiercalendar.view.fragment.EventListFragment
+import eijenson.bravefrontiercalendar.ui.view.fragment.CalendarFragment
+import eijenson.bravefrontiercalendar.ui.view.fragment.DevelopFragment
+import eijenson.bravefrontiercalendar.ui.view.fragment.EventListFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <eijenson.bravefrontiercalendar.view.custom.MyCalendarView
+    <eijenson.bravefrontiercalendar.ui.view.custom.MyCalendarView
         android:id="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_height="400dp"

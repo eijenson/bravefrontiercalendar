@@ -1,4 +1,4 @@
-package eijenson.bravefrontiercalendar.view
+package eijenson.bravefrontiercalendar.ui.view
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.view.MenuItem
 import com.trello.rxlifecycle2.components.RxActivity
 import eijenson.bravefrontiercalendar.R
 import eijenson.bravefrontiercalendar.extensions.rap
-import eijenson.bravefrontiercalendar.view.fragment.WebViewFragment
+import eijenson.bravefrontiercalendar.ui.view.fragment.WebViewFragment
 import kotlinx.android.synthetic.main.activity_event_detail.*
 
 /**

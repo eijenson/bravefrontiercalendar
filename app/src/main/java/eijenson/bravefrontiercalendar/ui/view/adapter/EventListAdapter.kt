@@ -1,4 +1,4 @@
-package eijenson.bravefrontiercalendar.view.adapter
+package eijenson.bravefrontiercalendar.ui.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
