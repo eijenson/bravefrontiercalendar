@@ -38,5 +38,8 @@ class DevelopFragment : Fragment() {
         notification.setOnClickListener {
             async(CommonPool) { DevUtils.notification(activity) }
         }
+        insert_test_data.setOnClickListener {
+            async(CommonPool) { DevUtils.insert() }
+        }
     }
 }

@@ -6,13 +6,16 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.util.Log
+import eijenson.bravefrontiercalendar.repository.models.BraveNews
 import eijenson.bravefrontiercalendar.repository.orma.BraveNewsRepositoryImpl
+import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
 import eijenson.bravefrontiercalendar.usecase.BraveNewsUseCase
 import eijenson.bravefrontiercalendar.view.MainActivity
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
+import java.util.*
 
 
 /**
@@ -82,5 +85,22 @@ object DevUtils {
         )
         mBuilder.setContentIntent(resultPendingIntent)
         manager.notify(0, mBuilder.build())
+    }
+
+    fun insert() {
+        val today = Calendar.getInstance().time
+        val tomorrow = Calendar.getInstance().let {
+            it.add(Calendar.DATE, 1)
+            it.time
+        }
+        val period = RegexUtil.formatDateTime(today) + " ~ " + RegexUtil.formatDateTime(tomorrow)
+        val timeList = RegexUtil.dateTime(period)
+        val braveNews = BraveNews(title = "テストタイトル" + (Math.random() * 10000).toInt(),
+                detail = "テスト詳細" + (Math.random() * 10000).toInt(),
+                period = period,
+                url = "https://google.co.jp/",
+                startTime = timeList?.first(),
+                endTime = timeList?.last())
+        BraveNewsRepositoryImpl().insert(braveNews)
     }
 }
