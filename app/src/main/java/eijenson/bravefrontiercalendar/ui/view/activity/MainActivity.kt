@@ -1,4 +1,4 @@
-package eijenson.bravefrontiercalendar.ui.view
+package eijenson.bravefrontiercalendar.ui.view.activity
 
 import android.app.Fragment
 import android.os.Bundle

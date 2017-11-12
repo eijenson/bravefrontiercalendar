@@ -9,7 +9,7 @@ import android.util.Log
 import eijenson.bravefrontiercalendar.repository.models.BraveNews
 import eijenson.bravefrontiercalendar.repository.orma.BraveNewsRepositoryImpl
 import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
-import eijenson.bravefrontiercalendar.ui.view.MainActivity
+import eijenson.bravefrontiercalendar.ui.view.activity.MainActivity
 import eijenson.bravefrontiercalendar.usecase.BraveNewsUseCase
 import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
