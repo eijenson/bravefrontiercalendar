@@ -27,7 +27,7 @@ interface BraveNewsRepository {
 
     fun deleteAll()
 
-    fun countAll(): Int
+    fun count(): Int
 
     fun isEmpty(): Boolean
 }

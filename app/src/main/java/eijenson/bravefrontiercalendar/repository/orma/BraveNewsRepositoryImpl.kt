@@ -67,7 +67,7 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
         database.deleteAll()
     }
 
-    override fun countAll(): Int {
+    override fun count(): Int {
         return database.selectFromBraveNews().count()
     }
 

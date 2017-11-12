@@ -46,9 +46,9 @@ class BraveNewsUseCase {
     }
 
     fun devDelete() {
-        Log.d("", "" + repository.countAll())
+        Log.d("", "" + repository.count())
         repository.delete(repository.selectAll().first().id)
-        Log.d("", "" + repository.countAll())
+        Log.d("", "" + repository.count())
     }
 
     /**
