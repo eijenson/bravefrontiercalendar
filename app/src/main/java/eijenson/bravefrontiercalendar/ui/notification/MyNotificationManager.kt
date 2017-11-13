@@ -1,11 +1,10 @@
 package eijenson.bravefrontiercalendar.ui.notification
 
-import android.annotation.TargetApi
 import android.app.*
 import android.content.Context
-import android.content.Intent
 import android.graphics.Color
 import android.os.Build
+import android.support.annotation.RequiresApi
 import eijenson.bravefrontiercalendar.R
 import eijenson.bravefrontiercalendar.ui.view.activity.MainActivity
 
@@ -20,7 +19,7 @@ class MyNotificationManager(private val context: Context) {
         const val CHANNEL_ID = "channel_1"
     }
 
-    @TargetApi(Build.VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     fun createNotificationChannel() {
         val channel = NotificationChannel(
                 // アプリでユニークな ID
@@ -50,11 +49,10 @@ class MyNotificationManager(private val context: Context) {
         mBuilder.setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("My notification")
                 .setContentText("Hello World!")
-        val resultIntent = Intent(context, MainActivity::class.java)
 
         val stackBuilder = TaskStackBuilder.create(context)
         stackBuilder.addParentStack(MainActivity::class.java)
-        stackBuilder.addNextIntent(resultIntent)
+        stackBuilder.addNextIntent(MainActivity.createIntent(context))
         val resultPendingIntent = stackBuilder.getPendingIntent(
                 0,
                 PendingIntent.FLAG_UPDATE_CURRENT

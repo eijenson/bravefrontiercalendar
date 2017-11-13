@@ -4,6 +4,7 @@
           package="eijenson.bravefrontiercalendar">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:name=".Application"
@@ -21,5 +22,14 @@
             </intent-filter>
         </activity>
         <activity android:name="eijenson.bravefrontiercalendar.ui.view.activity.EventDetailActivity"/>
+
+        <service android:name=".ui.service.MyService"/>
+
+        <receiver android:name=".ui.receiver.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

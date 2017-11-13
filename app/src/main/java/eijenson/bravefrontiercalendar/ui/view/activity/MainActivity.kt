@@ -1,6 +1,8 @@
 package eijenson.bravefrontiercalendar.ui.view.activity
 
 import android.app.Fragment
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import com.trello.rxlifecycle2.components.RxActivity
 import eijenson.bravefrontiercalendar.R
@@ -13,6 +15,14 @@ import kotlinx.android.synthetic.main.activity_main.*
  * メインアクティビティ
  */
 class MainActivity : RxActivity() {
+
+    companion object {
+        fun createIntent(context: Context): Intent {
+            val intent = Intent(context, MainActivity::class.java)
+            return intent
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
