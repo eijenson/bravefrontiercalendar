@@ -40,7 +40,7 @@ object DevUtils {
     }
 
     fun notification(context: Context) {
-        MyNotificationManager(context).showNotification()
+        MyNotificationManager(context).showNotification("タイトル", "詳細")
     }
 
     fun insert() {

@@ -3,6 +3,7 @@ package eijenson.bravefrontiercalendar.usecase
 import android.util.Log
 import eijenson.bravefrontiercalendar.di.component.DaggerInfraComponent
 import eijenson.bravefrontiercalendar.repository.models.BraveNews
+import eijenson.bravefrontiercalendar.repository.models.BraveNewsHeaderList
 import eijenson.bravefrontiercalendar.repository.repository.BraveNewsRepository
 import java.util.concurrent.locks.ReentrantLock
 import javax.inject.Inject
@@ -32,17 +33,29 @@ class BraveNewsUseCase {
         return repository.selectViewing()
     }
 
-    fun update() {
-        repository.updateAllIsViewingSiteToFalse()
-        val serverList = scrapingUseCase.getList()
-        serverList.forEach {
-            val braveNews = repository.selectWhereUrl(it.second)
-            if (braveNews == null) {
-                repository.insert(scrapingUseCase.getBraveNews(it.first, it.second))
-            } else {
-                repository.updateIsViewingSiteToTrue(braveNews.id)
+    fun update(): Long {
+        val localList = repository.selectViewing()
+        val serverList = BraveNewsHeaderList(scrapingUseCase.getHeaderList())
+
+        // ローカルにあってサーバにないデータのフラグを折る
+        localList.forEach {
+            if (!serverList.contains(it.getHeader())) {
+                it.isViewingSite = false
+                repository.update(it)
             }
         }
+
+        // サーバからのデータを追加
+        var count = 0L
+        serverList.forEach {
+            val braveNews = repository.selectWhereUrl(it.url)
+            if (braveNews == null) {
+                repository.insert(scrapingUseCase.getBraveNews(it.title, it.url))
+                count++
+            }
+        }
+
+        return count
     }
 
     fun devDelete() {

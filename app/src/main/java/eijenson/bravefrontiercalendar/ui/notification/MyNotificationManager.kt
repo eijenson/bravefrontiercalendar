@@ -38,7 +38,7 @@ class MyNotificationManager(private val context: Context) {
         notificationManager.createNotificationChannel(channel)
     }
 
-    fun showNotification() {
+    fun showNotification(title: String, text: String) {
         val mBuilder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Notification.Builder(context, CHANNEL_ID)
         } else {
@@ -47,8 +47,8 @@ class MyNotificationManager(private val context: Context) {
         }
 
         mBuilder.setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("My notification")
-                .setContentText("Hello World!")
+                .setContentTitle(title)
+                .setContentText(text)
 
         val stackBuilder = TaskStackBuilder.create(context)
         stackBuilder.addParentStack(MainActivity::class.java)

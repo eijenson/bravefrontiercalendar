@@ -3,6 +3,7 @@ package eijenson.bravefrontiercalendar.usecase
 import android.util.Log
 import eijenson.bravefrontiercalendar.message.RxBus
 import eijenson.bravefrontiercalendar.repository.models.BraveNews
+import eijenson.bravefrontiercalendar.repository.models.BraveNewsHeader
 import eijenson.bravefrontiercalendar.repository.models.Progress
 import eijenson.bravefrontiercalendar.repository.scraping.BraveNewsDetailScraping
 import eijenson.bravefrontiercalendar.repository.scraping.BraveNewsScraping
@@ -22,9 +23,10 @@ class ScrapingUseCase {
         }
     }
 
-    fun getList(): List<Pair<String, String>> {
+    fun getHeaderList(): List<BraveNewsHeader> {
         //TODO:Pairじゃなくて専用のクラスを作る
         return news.getTitleList().zip(news.getUrlList())
+                .map { BraveNewsHeader(it.first, it.second) }
     }
 
     fun getBraveNews(title: String, url: String): BraveNews {
