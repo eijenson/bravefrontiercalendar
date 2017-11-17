@@ -116,14 +116,14 @@ class MyCalendarView @JvmOverloads constructor(context: Context, attrs: Attribut
 
     private fun getSelectedDate(date_text: String?): Calendar {
         if (date_text == null) return Calendar.getInstance()
-        try {
+        return try {
             val date = DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.JAPAN).parse(date_text)
             val calendar = Calendar.getInstance()
             calendar.time = date
-            return calendar
+            calendar
         } catch (e: ParseException) {
             e.printStackTrace()
-            return Calendar.getInstance()
+            Calendar.getInstance()
         }
 
     }

@@ -13,7 +13,7 @@ import eijenson.bravefrontiercalendar.ui.service.MyService
 class MyBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         Log.d(this.toString(), "onReceive Start")
-        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.action)) {
+        if (Intent.ACTION_BOOT_COMPLETED == intent.action) {
             MyService.startService(context)
         }
     }

@@ -14,7 +14,7 @@ import kotlin.concurrent.withLock
  */
 class BraveNewsUseCase {
     @Inject lateinit var repository: BraveNewsRepository
-    val scrapingUseCase = ScrapingUseCase()
+    private val scrapingUseCase = ScrapingUseCase()
 
     object Singleton {
         val lock = ReentrantLock()

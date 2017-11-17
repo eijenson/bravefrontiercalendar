@@ -4,7 +4,7 @@ package eijenson.bravefrontiercalendar.repository.models
  * Created by kobayashimakoto on 2017/11/15.
  * ゲームのお知らせヘッダのリストを管理するクラス
  */
-class BraveNewsHeaderList(val braveNewsHeaderList: List<BraveNewsHeader>) {
+class BraveNewsHeaderList(private val braveNewsHeaderList: List<BraveNewsHeader>) {
 
     fun contains(element: BraveNewsHeader): Boolean {
         braveNewsHeaderList.forEach {

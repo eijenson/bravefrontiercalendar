@@ -18,8 +18,7 @@ class MainActivity : RxActivity() {
 
     companion object {
         fun createIntent(context: Context): Intent {
-            val intent = Intent(context, MainActivity::class.java)
-            return intent
+            return Intent(context, MainActivity::class.java)
         }
     }
 
