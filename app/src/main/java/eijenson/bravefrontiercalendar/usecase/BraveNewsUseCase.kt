@@ -2,8 +2,8 @@ package eijenson.bravefrontiercalendar.usecase
 
 import android.util.Log
 import eijenson.bravefrontiercalendar.di.component.DaggerInfraComponent
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
-import eijenson.bravefrontiercalendar.repository.models.BraveNewsHeaderList
+import eijenson.bravefrontiercalendar.model.BraveNews
+import eijenson.bravefrontiercalendar.model.BraveNewsHeaderList
 import eijenson.bravefrontiercalendar.repository.repository.BraveNewsRepository
 import java.util.concurrent.locks.ReentrantLock
 import javax.inject.Inject

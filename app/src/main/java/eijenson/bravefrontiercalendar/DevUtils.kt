@@ -2,7 +2,7 @@ package eijenson.bravefrontiercalendar
 
 import android.content.Context
 import android.util.Log
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
+import eijenson.bravefrontiercalendar.model.BraveNews
 import eijenson.bravefrontiercalendar.repository.orma.BraveNewsRepositoryImpl
 import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
 import eijenson.bravefrontiercalendar.ui.notification.MyNotificationManager

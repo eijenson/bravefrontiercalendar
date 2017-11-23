@@ -1,8 +1,8 @@
 package eijenson.bravefrontiercalendar.repository.orma
 
+import eijenson.bravefrontiercalendar.model.BraveNews
+import eijenson.bravefrontiercalendar.model.OrmaDatabase
 import eijenson.bravefrontiercalendar.repository.OrmaHolder
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
-import eijenson.bravefrontiercalendar.repository.models.OrmaDatabase
 import eijenson.bravefrontiercalendar.repository.repository.BraveNewsRepository
 import javax.inject.Inject
 

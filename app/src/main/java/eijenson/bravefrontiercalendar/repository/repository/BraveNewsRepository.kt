@@ -1,6 +1,6 @@
 package eijenson.bravefrontiercalendar.repository.repository
 
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
+import eijenson.bravefrontiercalendar.model.BraveNews
 
 /**
  * Created by eijenson on 2017/08/24.

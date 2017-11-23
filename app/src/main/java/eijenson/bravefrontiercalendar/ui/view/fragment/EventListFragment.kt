@@ -12,9 +12,9 @@ import com.trello.rxlifecycle2.components.RxFragment
 import com.trello.rxlifecycle2.kotlin.bindToLifecycle
 import eijenson.bravefrontiercalendar.R
 import eijenson.bravefrontiercalendar.message.RxBus
+import eijenson.bravefrontiercalendar.model.BraveNews
+import eijenson.bravefrontiercalendar.model.Progress
 import eijenson.bravefrontiercalendar.presenter.EventListPresenter
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
-import eijenson.bravefrontiercalendar.repository.models.Progress
 import eijenson.bravefrontiercalendar.ui.view.activity.EventDetailActivity
 import eijenson.bravefrontiercalendar.ui.view.adapter.EventListAdapter
 import kotlinx.android.synthetic.main.fragment_event_list.*

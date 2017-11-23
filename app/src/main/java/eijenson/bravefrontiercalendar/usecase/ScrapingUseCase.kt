@@ -2,9 +2,9 @@ package eijenson.bravefrontiercalendar.usecase
 
 import android.util.Log
 import eijenson.bravefrontiercalendar.message.RxBus
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
-import eijenson.bravefrontiercalendar.repository.models.BraveNewsHeader
-import eijenson.bravefrontiercalendar.repository.models.Progress
+import eijenson.bravefrontiercalendar.model.BraveNews
+import eijenson.bravefrontiercalendar.model.BraveNewsHeader
+import eijenson.bravefrontiercalendar.model.Progress
 import eijenson.bravefrontiercalendar.repository.scraping.BraveNewsDetailScraping
 import eijenson.bravefrontiercalendar.repository.scraping.BraveNewsScraping
 import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil

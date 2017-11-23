@@ -1,4 +1,4 @@
-package eijenson.bravefrontiercalendar.module
+package eijenson.bravefrontiercalendar.di.module
 
 import dagger.Module
 import dagger.Provides

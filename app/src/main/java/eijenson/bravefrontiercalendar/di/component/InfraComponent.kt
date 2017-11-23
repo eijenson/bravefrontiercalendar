@@ -1,7 +1,7 @@
 package eijenson.bravefrontiercalendar.di.component
 
 import dagger.Component
-import eijenson.bravefrontiercalendar.module.InfraModule
+import eijenson.bravefrontiercalendar.di.module.InfraModule
 import eijenson.bravefrontiercalendar.usecase.BraveNewsUseCase
 import javax.inject.Singleton
 

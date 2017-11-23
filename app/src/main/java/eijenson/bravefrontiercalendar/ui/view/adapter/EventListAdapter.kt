@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import eijenson.bravefrontiercalendar.R
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
+import eijenson.bravefrontiercalendar.model.BraveNews
 import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
 
 

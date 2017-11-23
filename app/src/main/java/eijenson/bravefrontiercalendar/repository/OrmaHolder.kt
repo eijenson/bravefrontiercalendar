@@ -1,7 +1,7 @@
 package eijenson.bravefrontiercalendar.repository
 
 import android.content.Context
-import eijenson.bravefrontiercalendar.repository.models.OrmaDatabase
+import eijenson.bravefrontiercalendar.model.OrmaDatabase
 
 /**
  * データベースのハンドラークラス

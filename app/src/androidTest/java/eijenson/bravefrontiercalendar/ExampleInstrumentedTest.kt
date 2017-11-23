@@ -4,7 +4,7 @@ import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import android.util.Log
-import eijenson.bravefrontiercalendar.repository.models.BraveNews
+import eijenson.bravefrontiercalendar.model.BraveNews
 import eijenson.bravefrontiercalendar.repository.orma.BraveNewsRepositoryImpl
 import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
 import org.junit.Assert
