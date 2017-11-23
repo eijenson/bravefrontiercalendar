@@ -25,12 +25,16 @@ class BraveNewsUseCase {
     }
 
     fun getHtml(): List<BraveNews> {
+        init()
+        return repository.selectViewing()
+    }
+
+    fun init() {
         Singleton.lock.withLock {
             if (!hasBraveNews()) {
                 repository.insert(scrapingUseCase.startScraping())
             }
         }
-        return repository.selectViewing()
     }
 
     fun update(): Long {

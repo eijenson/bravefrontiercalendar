@@ -1,6 +1,5 @@
 package eijenson.bravefrontiercalendar.presenter
 
-import android.util.Log
 import eijenson.bravefrontiercalendar.message.RxBus
 import eijenson.bravefrontiercalendar.ui.view.fragment.EventListFragment
 import eijenson.bravefrontiercalendar.usecase.BraveNewsUseCase
@@ -20,20 +19,13 @@ class EventListPresenter(private var eventListFragment: EventListFragment?) {
 
     fun setHtml() = launch(UI) {
         try {
-            // ローカルデータがなければ、通信進捗用プログレスバーを出す
-            if (!useCase.hasBraveNews()) eventListFragment?.showProgressBar()
             val result = getHtmlAsync().await()
             RxBus.send(result)
         } catch (e: CancellationException) {
-            Log.e("EventListPresenter", "setHtml")
-            e.printStackTrace()
             eventListFragment?.showToast("canceled")
         } catch (e: IOException) {
-            e.printStackTrace()
             eventListFragment?.showToast("通信に失敗しました")
         } catch (e: Exception) {
-            Log.e("EventListPresenter", "setHtml")
-            e.printStackTrace()
             eventListFragment?.showToast("exception")
         } finally {
             eventListFragment?.hideProgressBar()

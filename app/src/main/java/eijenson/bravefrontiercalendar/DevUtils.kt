@@ -5,6 +5,7 @@ import android.util.Log
 import eijenson.bravefrontiercalendar.model.BraveNews
 import eijenson.bravefrontiercalendar.repository.orma.BraveNewsRepositoryImpl
 import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
+import eijenson.bravefrontiercalendar.repository.sharedpreferences.LocalRepositoryImpl
 import eijenson.bravefrontiercalendar.ui.notification.MyNotificationManager
 import eijenson.bravefrontiercalendar.usecase.BraveNewsUseCase
 import kotlinx.coroutines.experimental.CommonPool
@@ -59,4 +60,6 @@ object DevUtils {
                 endTime = timeList?.last())
         BraveNewsRepositoryImpl().insert(braveNews)
     }
+
+    fun showText(context: Context) = LocalRepositoryImpl(context).get().toString()
 }

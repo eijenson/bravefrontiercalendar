@@ -41,5 +41,6 @@ class DevelopFragment : Fragment() {
         insert_test_data.setOnClickListener {
             async(CommonPool) { DevUtils.insert() }
         }
+        info.text = DevUtils.showText(activity)
     }
 }

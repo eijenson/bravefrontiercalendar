@@ -1,22 +1,25 @@
 package eijenson.bravefrontiercalendar
 
 import android.app.Application
-import android.os.Build
-import eijenson.bravefrontiercalendar.repository.OrmaHolder
-import eijenson.bravefrontiercalendar.ui.notification.MyNotificationManager
-import eijenson.bravefrontiercalendar.ui.service.MyService
+import eijenson.bravefrontiercalendar.di.component.DaggerLocalComponent
+import eijenson.bravefrontiercalendar.di.component.LocalComponent
+import eijenson.bravefrontiercalendar.di.module.LocalModule
+import eijenson.bravefrontiercalendar.presenter.ApplicationPresenter
 
 /**
  * アプリケーションクラス
  */
 class Application : Application() {
+    val presenter = ApplicationPresenter()
+
+    companion object {
+        lateinit var localComponent: LocalComponent
+    }
+
     override fun onCreate() {
         super.onCreate()
+        presenter.onCreate(this)
 
-        OrmaHolder.initialize(this)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            MyNotificationManager(this).createNotificationChannel()
-        }
-        MyService.startService(this)
+        localComponent = DaggerLocalComponent.builder().localModule(LocalModule(this)).build()
     }
 }

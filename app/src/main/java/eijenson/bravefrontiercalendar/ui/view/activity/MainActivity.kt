@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.trello.rxlifecycle2.components.RxActivity
 import eijenson.bravefrontiercalendar.R
+import eijenson.bravefrontiercalendar.presenter.MainPresenter
 import eijenson.bravefrontiercalendar.ui.view.fragment.CalendarFragment
 import eijenson.bravefrontiercalendar.ui.view.fragment.DevelopFragment
 import eijenson.bravefrontiercalendar.ui.view.fragment.EventListFragment
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * メインアクティビティ
  */
 class MainActivity : RxActivity() {
+    val presenter = MainPresenter()
 
     companion object {
         fun createIntent(context: Context): Intent {
@@ -26,6 +28,7 @@ class MainActivity : RxActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter.onCreate(this)
         initFragment()
         setActionBar(tool_bar)
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
