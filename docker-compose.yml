@@ -1,0 +1,9 @@
+version: '2'
+services:
+  android-build:
+    build:
+      context: ./
+      dockerfile: ./docker/build/Dockerfile
+    command: ./gradlew assembledebug
+    volumes:
+      - ./docker/outputs/:/project/app/build/outputs
