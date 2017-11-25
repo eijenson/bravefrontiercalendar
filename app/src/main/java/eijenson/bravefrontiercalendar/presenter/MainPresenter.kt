@@ -9,6 +9,9 @@ import kotlinx.coroutines.experimental.async
 
 /**
  * Created by kobayashimakoto on 2017/11/23.
+ * メイン画面のプレゼンター
+ *
+ * UIと画面遷移以外のことをする
  */
 class MainPresenter {
     private val localDataUseCase = LocalDataUseCase()

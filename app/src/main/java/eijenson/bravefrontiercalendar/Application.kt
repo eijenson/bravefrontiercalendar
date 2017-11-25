@@ -10,7 +10,7 @@ import eijenson.bravefrontiercalendar.presenter.ApplicationPresenter
  * アプリケーションクラス
  */
 class Application : Application() {
-    val presenter = ApplicationPresenter()
+    private val presenter = ApplicationPresenter()
 
     companion object {
         lateinit var localComponent: LocalComponent

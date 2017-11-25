@@ -71,7 +71,5 @@ class BraveNewsUseCase {
     /**
      * スクレイピングをする必要があるのかを返す
      */
-    fun hasBraveNews(): Boolean {
-        return !repository.isEmpty()
-    }
+    private fun hasBraveNews(): Boolean = !repository.isEmpty()
 }

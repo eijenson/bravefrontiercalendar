@@ -30,7 +30,5 @@ class BraveNewsScraping(private val url: String = "http://www.a-lim.jp/brave/new
         }
     }
 
-    private fun Node.href(): String {
-        return this.attr("href")
-    }
+    private fun Node.href(): String = this.attr("href")
 }

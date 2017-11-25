@@ -7,6 +7,9 @@ import eijenson.bravefrontiercalendar.ui.notification.MyNotificationManager
 
 /**
  * Created by kobayashimakoto on 2017/11/23.
+ * アプリケーションクラスのプレゼンター
+ *
+ * アプリ全体に関わる初期化処理を記述する
  */
 class ApplicationPresenter {
 

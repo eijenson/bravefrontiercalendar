@@ -7,17 +7,11 @@ import java.util.*
  * カレンダーの追加関数
  */
 
-fun Calendar.getYear(): Int {
-    return get(Calendar.YEAR)
-}
+fun Calendar.getYear(): Int = get(Calendar.YEAR)
 
-fun Calendar.getMonth(): Int {
-    return get(Calendar.MONTH)
-}
+fun Calendar.getMonth(): Int = get(Calendar.MONTH)
 
-fun Calendar.getDate(): Int {
-    return get(Calendar.DATE)
-}
+fun Calendar.getDate(): Int = get(Calendar.DATE)
 
 fun Calendar.set(year: Int, month: Int, date: Int, hourOfDay: Int, minute: Int, second: Int, milliSecond: Int) {
     set(year, month, date, hourOfDay, minute, second)
@@ -31,9 +25,7 @@ fun Calendar.truncationTime() {
     set(Calendar.MILLISECOND, 0)
 }
 
-fun Calendar.getDay(): String {
-    return "" + getYear() + "/" + (getMonth() + 1) + "/" + getDate()
-}
+fun Calendar.getDay(): String = "" + getYear() + "/" + (getMonth() + 1) + "/" + getDate()
 
 fun Calendar.printlnDate() {
     println("" + getYear() + "/" + (getMonth() + 1) + "/" + getDate())

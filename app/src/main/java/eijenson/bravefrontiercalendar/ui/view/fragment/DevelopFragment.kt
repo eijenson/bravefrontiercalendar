@@ -14,15 +14,11 @@ import kotlinx.coroutines.experimental.async
 class DevelopFragment : Fragment() {
 
     companion object {
-        fun newInstance(): DevelopFragment {
-            return DevelopFragment()
-        }
+        fun newInstance(): DevelopFragment = DevelopFragment()
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_develop, container, false)
-    }
+                              savedInstanceState: Bundle?): View? = inflater!!.inflate(R.layout.fragment_develop, container, false)
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

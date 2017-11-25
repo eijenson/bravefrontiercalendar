@@ -7,8 +7,9 @@ import javax.inject.Inject
 
 /**
  * Created by kobayashimakoto on 2017/11/23.
+ * 端末ごとに保存する値を扱うクラス
  */
-class LocalDataUseCase {
+open class LocalDataUseCase {
     @Inject protected lateinit var repository: LocalRepository
     private val localData: LocalData
 
@@ -17,9 +18,7 @@ class LocalDataUseCase {
         localData = repository.get()
     }
 
-    fun isFirstStart(): Boolean {
-        return localData.isFirstStart
-    }
+    fun isFirstStart(): Boolean = localData.isFirstStart
 
     fun finishFirstStart() {
         localData.isFirstStart = false

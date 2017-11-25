@@ -55,9 +55,7 @@ class MyService : Service() {
         subscribe
     }
 
-    override fun onBind(intent: Intent?): IBinder? {
-        return null
-    }
+    override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onDestroy() {
         super.onDestroy()

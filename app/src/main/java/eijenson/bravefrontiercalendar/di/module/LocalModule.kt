@@ -9,6 +9,7 @@ import javax.inject.Singleton
 
 /**
  * Created by kobayashimakoto on 2017/11/23.
+ * 端末ごとに保存するクラスの依存性を管理するクラス
  */
 @Module
 class LocalModule(val context: Context) {

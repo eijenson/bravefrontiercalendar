@@ -35,15 +35,9 @@ class EventListAdapter(val context: Context, val resource: Int, private val obje
         return view
     }
 
-    override fun getItem(position: Int): BraveNews {
-        return objects[position]
-    }
+    override fun getItem(position: Int): BraveNews = objects[position]
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
+    override fun getItemId(position: Int): Long = position.toLong()
 
-    override fun getCount(): Int {
-        return objects.size
-    }
+    override fun getCount(): Int = objects.size
 }

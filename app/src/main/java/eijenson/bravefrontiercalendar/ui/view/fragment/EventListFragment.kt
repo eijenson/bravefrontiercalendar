@@ -29,16 +29,12 @@ import kotlinx.coroutines.experimental.launch
 class EventListFragment : RxFragment() {
 
     companion object {
-        fun newInstance(): EventListFragment {
-            return EventListFragment()
-        }
+        fun newInstance(): EventListFragment = EventListFragment()
     }
 
     private lateinit var presenter: EventListPresenter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_event_list, container, false)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View = inflater.inflate(R.layout.fragment_event_list, container, false)
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -93,11 +89,6 @@ class EventListFragment : RxFragment() {
             activity
         }
 
-    }
-
-    fun showProgressBar() {
-        progress_bar_loading.visibility = View.VISIBLE
-        progress_bar_percent.visibility = View.VISIBLE
     }
 
     private fun setProgressPercent(percent: Int) {

@@ -8,6 +8,7 @@ import javax.inject.Singleton
 
 /**
  * Created by kobayashimakoto on 2017/11/23.
+ * Daggerの端末ごとに保存するクラスのコンポーネント
  */
 @Singleton
 @Component(modules = arrayOf(LocalModule::class, ApplicationModule::class))

@@ -16,9 +16,7 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
         database.prepareInsertIntoBraveNews().executeAll(models)
     }
 
-    override fun insert(braveNews: BraveNews): Long {
-        return database.insertIntoBraveNews(braveNews)
-    }
+    override fun insert(braveNews: BraveNews): Long = database.insertIntoBraveNews(braveNews)
 
     override fun select(id: Long): BraveNews? {
         val model = database.selectFromBraveNews().idEq(id)
@@ -38,9 +36,7 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
                 .toList()
     }
 
-    override fun selectAll(): List<BraveNews> {
-        return database.selectFromBraveNews().orderBy("startTime is null asc").orderByStartTimeAsc().toList()
-    }
+    override fun selectAll(): List<BraveNews> = database.selectFromBraveNews().orderBy("startTime is null asc").orderByStartTimeAsc().toList()
 
     override fun update(braveNews: BraveNews) {
         braveNews.apply {
@@ -75,11 +71,7 @@ class BraveNewsRepositoryImpl @Inject constructor() : BraveNewsRepository {
         database.deleteAll()
     }
 
-    override fun count(): Int {
-        return database.selectFromBraveNews().count()
-    }
+    override fun count(): Int = database.selectFromBraveNews().count()
 
-    override fun isEmpty(): Boolean {
-        return database.selectFromBraveNews().isEmpty
-    }
+    override fun isEmpty(): Boolean = database.selectFromBraveNews().isEmpty
 }

@@ -14,12 +14,8 @@ import eijenson.bravefrontiercalendar.R
 class CalendarFragment : Fragment() {
 
     companion object {
-        fun newInstance(): CalendarFragment {
-            return CalendarFragment()
-        }
+        fun newInstance(): CalendarFragment = CalendarFragment()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_calendar, container, false)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View = inflater.inflate(R.layout.fragment_calendar, container, false)
 }

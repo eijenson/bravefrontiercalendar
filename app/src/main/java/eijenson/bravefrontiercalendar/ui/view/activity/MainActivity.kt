@@ -16,12 +16,10 @@ import kotlinx.android.synthetic.main.activity_main.*
  * メインアクティビティ
  */
 class MainActivity : RxActivity() {
-    val presenter = MainPresenter()
+    private val presenter = MainPresenter()
 
     companion object {
-        fun createIntent(context: Context): Intent {
-            return Intent(context, MainActivity::class.java)
-        }
+        fun createIntent(context: Context): Intent = Intent(context, MainActivity::class.java)
     }
 
 

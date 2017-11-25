@@ -21,7 +21,5 @@ data class BraveNews(
         @Setter("createTime") @Column(indexed = true) var createTime: Date? = Date(),
         @Setter("isViewingSite") @Column(indexed = true) var isViewingSite: Boolean? = true
 ) {
-    fun getHeader(): BraveNewsHeader {
-        return BraveNewsHeader(title, url)
-    }
+    fun getHeader(): BraveNewsHeader = BraveNewsHeader(title, url)
 }
