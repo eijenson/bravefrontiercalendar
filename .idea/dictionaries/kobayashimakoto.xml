@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="kobayashimakoto">
     <words>
+      <w>WORKDIR</w>
       <w>bravefrontiercalendar</w>
       <w>coroutines</w>
       <w>debian</w>
@@ -11,7 +12,6 @@
       <w>newslist</w>
       <w>noninteractive</w>
       <w>orma</w>
-      <w>sdkmanage</w>
       <w>sdkmanager</w>
       <w>untar</w>
       <w>zlib</w>
