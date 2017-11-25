@@ -12,7 +12,9 @@ import eijenson.bravefrontiercalendar.repository.repository.LocalRepository
  */
 class LocalRepositoryImpl(val context: Context) : LocalRepository {
 
-    private val IS_FIRST_START_KEY = "is_first_start"
+    companion object {
+        private const val IS_FIRST_START_KEY = "is_first_start"
+    }
 
     private val fileName = "local_data"
     private val preference = context.getSharedPreferences(fileName, MODE_PRIVATE)

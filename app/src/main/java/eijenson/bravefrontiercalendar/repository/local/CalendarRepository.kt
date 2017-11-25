@@ -10,7 +10,10 @@ import kotlin.collections.ArrayList
  */
 class CalendarRepository(date: Date) {
 
-    private val WEEK_NUM = 7
+    companion object {
+        private val WEEK_NUM = 7
+    }
+
     private val c = Calendar.getInstance()
 
     init {
