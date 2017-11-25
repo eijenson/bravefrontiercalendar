@@ -25,7 +25,7 @@ RUN echo y | sdkmanager "platforms;android-25"
 RUN echo y | sdkmanager "build-tools;27.0.0"
 RUN echo y | sdkmanager "platforms;android-27"
 
-# Set Enviroment
+# Set Environment
 ENV PATH ${ANDROID_HOME}/platform-tools:$PATH
 ENV PATH ${ANDROID_HOME}/build-tools/27.0.0:$PATH
 
@@ -36,7 +36,7 @@ RUN (while sleep 1; do echo "y"; done) | sdkmanager --licenses
 COPY . /project
 WORKDIR /project
 RUN rm local.properties
-RUN ./gradlew assembledebug clean
+RUN ./gradlew　assembledebug clean
 RUN mkdir ./app/build && mkdir ./app/build/outputs
 VOLUME ./app/build/outputs
 

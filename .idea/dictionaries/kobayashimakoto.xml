@@ -3,9 +3,18 @@
     <words>
       <w>bravefrontiercalendar</w>
       <w>coroutines</w>
+      <w>debian</w>
+      <w>dpkg</w>
       <w>iframe</w>
+      <w>libncurses</w>
+      <w>libstdc</w>
       <w>newslist</w>
+      <w>noninteractive</w>
       <w>orma</w>
+      <w>sdkmanage</w>
+      <w>sdkmanager</w>
+      <w>untar</w>
+      <w>zlib</w>
     </words>
   </dictionary>
 </component>
