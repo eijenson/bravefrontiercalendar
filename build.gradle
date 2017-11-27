@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.60'
+    ext.kotlin_version = '1.1.61'
 
     repositories {
         google()
@@ -20,12 +20,22 @@ allprojects {
     repositories {
         google()
         jcenter()
-        mavenCentral()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+tasks.withType(JavaCompile) {
+    options.incremental = true
+    options.fork = true
+}
+
+tasks.withType(Test) {
+    def maxCount = gradle.startParameter.maxWorkerCount
+    maxParallelForks = (maxCount < 2) ? 1 : maxCount / 2
+    forEvery = 100
 }
 
 apply plugin: 'com.github.ben-manes.versions'
