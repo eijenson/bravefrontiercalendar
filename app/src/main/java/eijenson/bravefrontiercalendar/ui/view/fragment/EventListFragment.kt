@@ -92,18 +92,23 @@ class EventListFragment : RxFragment() {
     }
 
     private fun setProgressPercent(percent: Int) {
+        showProgressBar()
         launch(UI) {
-            progress_bar_loading.visibility = View.VISIBLE
-            progress_bar_percent.visibility = View.VISIBLE
             progress_bar_loading.progress = percent
         }
     }
 
     private fun setProgressMax(max: Int) {
+        showProgressBar()
+        launch(UI) {
+            progress_bar_loading.max = max
+        }
+    }
+
+    private fun showProgressBar() {
         launch(UI) {
             progress_bar_loading.visibility = View.VISIBLE
             progress_bar_percent.visibility = View.VISIBLE
-            progress_bar_loading.max = max
         }
     }
 
