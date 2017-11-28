@@ -36,9 +36,9 @@ RUN (while sleep 1; do echo "y"; done) | sdkmanager --licenses
 COPY . /project
 WORKDIR /project
 RUN rm local.properties
-RUN ./gradlew　assembledebug clean
+RUN ./gradlew assembledebug clean
 RUN mkdir ./app/build && mkdir ./app/build/outputs
-VOLUME ./app/build/outputs
+#VOLUME ./app/build/outputs
 
 ENV TERM dumb
 

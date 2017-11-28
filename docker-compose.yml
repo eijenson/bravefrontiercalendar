@@ -3,7 +3,7 @@ services:
   android-build:
     build:
       context: ./
-      dockerfile: ./docker/build/Dockerfile
+      dockerfile: ./Dockerfile
     command: ./gradlew assembledebug
     volumes:
       - ./docker/outputs/:/project/app/build/outputs
