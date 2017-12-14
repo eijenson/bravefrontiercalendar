@@ -26,6 +26,8 @@ data class BraveNews(
     fun isBetween(): Boolean {
         if (startTime == null || endTime == null) return true
         val now = Calendar.getInstance().time
-        return now.before(startTime) && now.after(endTime)
+        val isStart = now.after(startTime)
+        val isNotEnd = now.before(endTime)
+        return isStart && isNotEnd
     }
 }
