@@ -22,4 +22,10 @@ data class BraveNews(
         @Setter("isViewingSite") @Column(indexed = true) var isViewingSite: Boolean? = true
 ) {
     fun getHeader(): BraveNewsHeader = BraveNewsHeader(title, url)
+
+    fun isBetween(): Boolean {
+        if (startTime == null || endTime == null) return true
+        val now = Calendar.getInstance().time
+        return now.before(startTime) && now.after(endTime)
+    }
 }

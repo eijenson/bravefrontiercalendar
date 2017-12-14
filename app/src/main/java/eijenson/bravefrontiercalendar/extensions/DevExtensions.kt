@@ -3,7 +3,7 @@ package eijenson.bravefrontiercalendar.extensions
 /**
  * 開発用ツール
  */
-var time: Long = 0
+private var time: Long = 0
 
 fun rap() {
     rap("")

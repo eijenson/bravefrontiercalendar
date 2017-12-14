@@ -8,14 +8,14 @@ import org.jsoup.select.Elements
 /**
  * お知らせ位一覧画面のスクレイピングを行うクラス
  */
-class BraveNewsScraping(private val url: String = "http://www.a-lim.jp/brave/news/news_list.html") {
+class BraveNewsScraping(private val url: String = "https://webnotice.ssl.brave.a-lim.jp/news/news.html") {
 
     private val document: Document by lazy {
         Jsoup.connect(url).get()
     }
 
     private val body: Elements by lazy {
-        document.select(".news > .newslist > a")
+        document.select(".news_flame_mdl > .newslist > a")
     }
 
     fun getTitleList(): List<String> {

@@ -31,6 +31,11 @@ class EventListAdapter(val context: Context, val resource: Int, private val obje
         period?.text = item.period
         startTime?.text = RegexUtil.formatDateTime(item.startTime)
         endTime?.text = RegexUtil.formatDateTime(item.endTime)
+        if (item.isBetween()) {
+            view?.setBackgroundColor(context.resources.getColor(android.R.color.white))
+        } else {
+            view?.setBackgroundColor(context.resources.getColor(android.R.color.darker_gray))
+        }
 
         return view
     }
