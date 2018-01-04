@@ -5,10 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.TextView
-import eijenson.bravefrontiercalendar.R
 import eijenson.bravefrontiercalendar.model.BraveNews
 import eijenson.bravefrontiercalendar.repository.scraping.RegexUtil
+import kotlinx.android.synthetic.main.item_event.view.*
 
 
 /**
@@ -20,17 +19,13 @@ class EventListAdapter(val context: Context, val resource: Int, private val obje
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         val view = convertView ?: layoutInflater.inflate(resource, parent, false)
-        val title = view?.findViewById<TextView>(R.id.title)
-        val period = view?.findViewById<TextView>(R.id.period)
-        val startTime = view?.findViewById<TextView>(R.id.startTime)
-        val endTime = view?.findViewById<TextView>(R.id.endTime)
 
         val item = getItem(position)
 
-        title?.text = item.title
-        period?.text = item.period
-        startTime?.text = RegexUtil.formatDateTime(item.startTime)
-        endTime?.text = RegexUtil.formatDateTime(item.endTime)
+        view.title?.text = item.title
+        view.period?.text = item.period
+        view.startTime?.text = RegexUtil.formatDateTime(item.startTime)
+        view.endTime?.text = RegexUtil.formatDateTime(item.endTime)
         if (item.isBetween()) {
             view?.setBackgroundColor(context.resources.getColor(android.R.color.white))
         } else {
