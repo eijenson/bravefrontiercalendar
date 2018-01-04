@@ -1,7 +1,6 @@
-package eijenson.bravefrontiercalendar
+package eijenson.bravefrontiercalendar.repository.local
 
 import eijenson.bravefrontiercalendar.extensions.set
-import eijenson.bravefrontiercalendar.repository.local.CalendarRepository
 import org.junit.Assert
 import org.junit.Test
 import java.util.*
