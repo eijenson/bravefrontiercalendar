@@ -8,3 +8,6 @@
 /captures
 .externalNativeBuild
 /docker/outputs/*
+Gemfile.lock
+.bundle
+/vendor/*
